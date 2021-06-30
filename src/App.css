@@ -2,6 +2,92 @@
   text-align: center;
 }
 
+
+.color{
+
+background-color: #1e1f23;
+
+}
+
+
+.color2{
+
+background-color: #1e1f23;
+
+}
+
+.color3{
+height:920px;
+background-color: #151618;
+;
+
+}
+
+.color4{
+
+  background-color: cornsilk;
+
+}
+
+
+
+.borderColorImage{
+  border:  2px solid;
+ border-color: chartreuse;
+
+
+}
+
+
+.colorverde{
+
+  color: chartreuse;
+}
+
+.colorTurquesa{
+
+  color: #58e3c5;
+
+
+}
+
+.colorSalmon{
+
+  color: #df4944;
+
+}
+
+.botonComentar{
+ 
+
+ 
+  position: relative;
+  top: -15%;
+  left: -90%;
+
+  
+}
+
+.tamaCitas{
+
+  overflow-y: scroll;
+
+}
+
+.tamaCitas::-webkit-scrollbar{
+
+width: 7px;
+
+background-color: #151618;
+
+}
+
+.tamaCitas::-webkit-scrollbar-thumb{
+
+background-color: white;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
