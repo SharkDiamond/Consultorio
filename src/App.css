@@ -2,12 +2,83 @@
   text-align: center;
 }
 
+.scroll-container {
+  display: block;
+  width: 800px;
+height: 480px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+ background-color: #1e1f23;
+}
+
+.scroll-container::-webkit-scrollbar-thumb{
+
+  background-color: white;
+
+
+}
+
+.scroll-container::-webkit-scrollbar{
+
+  width: 7px;
+  
+  background-color: #151618;
+  
+  }
+
+
+  .scroll-Compromisos {
+    display: block;
+   
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 555px;
+    height: 170px;
+  
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+   background-color: #1e1f23;
+
+  
+  }
+
+  .scroll-Compromisos::-webkit-scrollbar-thumb{
+
+    background-color: white;
+  
+  
+  }
+  .scroll-Compromisos::-webkit-scrollbar{
+
+    width: 7px;
+    
+    background-color: #151618;
+    
+    }
 
 .color{
 
 background-color: #1e1f23;
 
 }
+
+.arriba{
+
+display: flex;
+
+top: -70px;
+}
+
+.abajo{
+
+  display: flex;
+  
+  bottom: -70px;
+  }
+
 
 
 .color2{
@@ -23,17 +94,32 @@ background-color: #151618;
 
 }
 
+.colorPanelMedio{
+
+  background-color: #151618;
+  ;
+
+}
+
+
 .color4{
 
   background-color: cornsilk;
 
 }
 
+.borderDivsPrincipales{
 
+  border:  1px solid;
+ border-color: #58e3c5;
+
+
+}
 
 .borderColorImage{
-  border:  2px solid;
- border-color: chartreuse;
+
+  border:  3px solid;
+ border-color: #58e3c5;
 
 
 }
@@ -51,15 +137,21 @@ background-color: #151618;
 
 }
 
+
+
 .colorSalmon{
 
   color: #df4944;
 
 }
 
+
+.grafica{
+
+  background-color: #1e1f23;
+}
 .botonComentar{
  
-
  
   position: relative;
   top: -15%;
