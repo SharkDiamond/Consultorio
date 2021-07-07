@@ -16,6 +16,8 @@ function App() {
 
 <PanelMedio/>
 
+
+
 <RightPanel/>
 
 </div>

@@ -1,3 +1,163 @@
+
+@font-face {
+  font-family: "Amaranth-Regular";
+  src: url("./Letras/Amaranth-Regular.ttf");
+}
+
+
+
+p{
+
+font-family:"Amaranth-Regular";
+
+}
+span{
+  font-family:"Amaranth-Regular";
+
+}
+
+h1,h2,h3,h4,h5{
+
+  font-family:"Amaranth-Regular";
+
+}
+
+
+@media screen and (max-width: 375%) {
+
+  .visible{
+    display: flex;
+    visibility: hidden ;
+
+  }
+  .scroll-Compromisos {
+    display: block;
+   
+    width: 10%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30px;
+    height: 10px;
+  
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+   background-color: #0c35da;
+
+  
+  }
+  
+ 
+}
+
+
+
+@media screen and (max-width: 621px) {
+  .espacioCaja{
+
+    padding-left: 10px;
+    padding-right:10px ;
+    
+    }
+
+  .color3{
+    height:970px;
+    background-color: #151618;
+    ;
+    
+    }
+
+
+
+  .visible{
+    display: none;
+    visibility: hidden ;
+
+  }
+
+  .scroll-Compromisos {
+    display: block;
+   
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 305px;
+    height: 130px;
+  
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+   background-color: #1e1f23;
+
+  
+  }
+  
+ 
+}
+
+
+@media screen and (min-width: 621px) {
+
+
+  
+.color3{
+  height:920px;
+  background-color: #151618;
+  ;
+  
+  }
+
+  .espacioCaja{
+
+    padding-left: 23px;
+    padding-right:23px ;
+    
+    }
+    
+
+  .visible{
+    display: flex;
+    visibility: hidden ;
+
+  }
+
+  .scroll-Compromisos {
+    display: block;
+   
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 555px;
+    height: 170px;
+  
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+   background-color: #1e1f23;
+
+  
+  }
+
+
+
+}
+
+
+
+
+
+.borderDivsPrincipales{
+
+border:  1px solid;
+border-color: #58e3c5;
+
+
+}
+
+
 .App {
   text-align: center;
 }
@@ -27,23 +187,6 @@ height: 480px;
   }
 
 
-  .scroll-Compromisos {
-    display: block;
-   
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 555px;
-    height: 170px;
-  
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-   background-color: #1e1f23;
-
-  
-  }
 
   .scroll-Compromisos::-webkit-scrollbar-thumb{
 
@@ -87,12 +230,7 @@ background-color: #1e1f23;
 
 }
 
-.color3{
-height:920px;
-background-color: #151618;
-;
 
-}
 
 .colorPanelMedio{
 
@@ -108,13 +246,7 @@ background-color: #151618;
 
 }
 
-.borderDivsPrincipales{
 
-  border:  1px solid;
- border-color: #58e3c5;
-
-
-}
 
 .borderColorImage{
 

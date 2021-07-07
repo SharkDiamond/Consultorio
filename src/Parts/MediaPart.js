@@ -72,7 +72,7 @@ export default function halfPanel() {
 
 return(
 
-    <div className="col-lg-6 col-md-6 colorPanelMedio ml-4 mr-4  pt-4 pl-5 pr-5 pb-4 borderDivsPrincipales rounded">
+    <div className="d-none d-lg-block d-md-block col-lg-6  col-md-6 colorPanelMedio mr-auto ml-auto  pt-4 pl-5 pr-5 pb-4 borderDivsPrincipales rounded">
     
     <div className="row">
 

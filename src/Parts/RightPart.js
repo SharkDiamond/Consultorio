@@ -4,7 +4,7 @@ export default function RightPanel(){
     
 return(
 
-    <div className=" col-lg-4 col-md-5  ml-4   color3  rounded text-center borderDivsPrincipales">
+    <div className="col-sm-12 col-lg-4 col-md-5  mr-auto ml-auto  color3  rounded text-center borderDivsPrincipales">
     
   
     <div className=" row mt-4 mr-4 ml-4 mb-5 color2 border border-white rounded align-items-center ">
@@ -29,7 +29,7 @@ return(
     </div>
     
     
-    <div className="pr-4 pl-4 ">
+    <div className="espacioCaja">
     
     
     
@@ -63,7 +63,7 @@ return(
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-primary botonComentar">C</button>
       </div>
     
     
@@ -237,7 +237,7 @@ return(
     </div>
     
   <h3 className="text-center text-white font-weight-bold">Compromisos</h3>
-  <div className=" scroll-Compromisos rounded mb-4">
+  <div className="scroll-Compromisos rounded mb-4">
 
     <div className="row color2  rounded ">
 
