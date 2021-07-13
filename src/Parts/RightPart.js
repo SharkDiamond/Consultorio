@@ -1,24 +1,27 @@
 import "../App.css";
-
+import '../animacion.css';
 export default function RightPanel(){
     
+
+
+
 return(
 
-    <div className="col-sm-12 col-lg-4 col-md-5  mr-auto ml-auto  color3  rounded text-center borderDivsPrincipales">
+    <div className="col-sm-12 col-lg-4 col-md-5  mr-auto ml-auto  color3 testx  text-center sombra">
     
   
-    <div className=" row mt-4 mr-4 ml-4 mb-5 color2 border border-white rounded align-items-center ">
+    <div className=" row mt-4 mr-4 ml-4 mb-5 color2  rounded align-items-center testx">
     
-    <div className="col-lg-4 col-md-12">
+    <div className="col-lg-4 col-md-12 ">
     
-    <img width="111px" src="https://scontent.fbog10-1.fna.fbcdn.net/v/t1.6435-9/180329021_4218093848233484_2283269287699736659_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFSFWHVlVBfHzfET_y4oMJ3M4i5ARZEn_MziLkBFkSf8wCLT6_brPhHsnX7ZMm3lT0dfbv9C3w2qopY98BSWpxV&_nc_ohc=POeqno3cO4sAX8N-IXr&_nc_ht=scontent.fbog10-1.fna&oh=d01f61c526eb446510e4d201b1403045&oe=60E858EF" alt="..." class="borderColorImage rounded-circle m-2 "></img>
+    <img width="111px" src="https://scontent.fbog10-1.fna.fbcdn.net/v/t1.6435-9/180329021_4218093848233484_2283269287699736659_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFSFWHVlVBfHzfET_y4oMJ3M4i5ARZEn_MziLkBFkSf8wCLT6_brPhHsnX7ZMm3lT0dfbv9C3w2qopY98BSWpxV&_nc_ohc=YEKFdoBjZ-UAX_5GXOD&tn=xjoJ54JPeqztNkeU&_nc_ht=scontent.fbog10-1.fna&oh=85ceef2f5426ffde92891080d854c94a&oe=60F23C2F" alt="..." class="borderColorImage rounded-circle m-2 "></img>
     
     
     </div>
     
-    <div className="col-lg-8 col-md-12">
+    <div className="col-lg-8 col-md-12 ">
     
-    <p className="text-white font-weight-bold h4">Hi Gabriel!</p>
+    <p className="colorgris font-weight-bold h4">Hi Gabriel!</p>
     <p className="colorTurquesa font-weight-bold h4">Tiene 4 citas medicas hoy</p>
     
     </div>
@@ -31,215 +34,171 @@ return(
     
     <div className="espacioCaja">
     
+    <div className="container scroll-container rounded testx">
     
-    
-    <div className="container scroll-container ">
-    
-    
-    
-    <div className="row mt-3 mb-4 mr-4 ml-4 border-bottom border-white" >
-    
-    
-    <div className="col-11 col-xs-11" >
-    
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
-    
-    </div>
-    
-    <div className="col-1 col-xs-1">
-      <button   className="btn btn-primary botonComentar ">C</button>
-      </div>
-    
-    
-    </div>
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
     
-    <div className="row m-4 border-bottom border-white" >
-    
-    
-    <div className="col-11 col-xs-1" >
-    
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
-    
-    </div>
-    
-    <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
-      </div>
-    
-    
-    </div>
-    
-    <div className="row m-4 border-bottom border-white" >
-    
-    
-    <div className="col-11 col-xs-1" >
-    
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
-    
-    </div>
-    
-    <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
-      </div>
-    
-    
-    </div>
-    
-    
-    <div className="row m-4 border-bottom border-white" >
-    
-    
-    <div className="col-11 col-xs-11" >
-    
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
-    
-    </div>
-    
-    <div className="col-1 col-xs-1">
-      <button   className="btn btn-primary botonComentar ">C</button>
-      </div>
-    
-    
-    </div>
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
+    
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
+    
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
+    
     
     <div className="row m-4 border-bottom border-white" >
     
     
-    <div className="col-11 col-xs-11" >
+    <div className="col-11 col-xs-1 " >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
-    <div className="col-1 col-xs-1">
-      <button   className="btn btn-primary botonComentar ">C</button>
+    <div className="col-1 col-xs-1 ">
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
+    
+    
+    <div className="row m-4 border-bottom border-white " >
+    
+    
+    <div className="col-11 col-xs-1" >
+    
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    
+    </div>
+    
+    <div className="col-1 col-xs-1 ">
+      <button   className="btn btn-dark botonComentar">C</button>
+      </div>
+    
+    
+    </div>
+    
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
+    
     
     <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
     
-    <div className="row mt-4 mr-4 ml-4 mb-2 border-bottom border-white" >
+    
+    <div className="row m-4 border-bottom border-white" >
     
     
     <div className="col-11 col-xs-1" >
     
-    <p  align="left" className="font-weight-bold text-white">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
+    <p  align="left" className="font-weight-bold colorgris">IDP 123 - <span className="colorTurquesa">Gabi Miranda</span> - <span className="colorSalmon">Dolor de cabeza</span></p>
     
     </div>
     
     <div className="col-1 col-xs-1 ">
-      <button   className="btn btn-primary botonComentar ">C</button>
+      <button   className="btn btn-dark botonComentar">C</button>
       </div>
     
     
     </div>
     
-    
+  
     </div>
     
     
     </div>
     
-  <h3 className="text-center text-white font-weight-bold">Compromisos</h3>
-  <div className="scroll-Compromisos rounded mb-4">
+  <h3 className="text-center  font-weight-bold titulo testx" >Compromisos</h3>
+  <div className="scroll-Compromisos  rounded mb-4 testx">
 
-    <div className="row color2  rounded ">
+    <div className="row color2   ">
 
     <div className="col-12">
 
@@ -267,5 +226,11 @@ return(
 
 
 }
+
+
+
+
+
+
 
 

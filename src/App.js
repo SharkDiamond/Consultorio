@@ -1,7 +1,7 @@
 import RightPanel from "./Parts/RightPart";
 import PanelMedio from "./Parts/MediaPart";
 import LeftPanel from "./Parts/LeftPart";
-
+import Barra from "./Bar";
 
 function App() {
   
@@ -9,8 +9,16 @@ function App() {
   
   return (
   <div className="Container-fluid color p-4">
+    <div className="row">
+    
+    <Barra/>
+   
+   
+    </div>
 
-<div className="row">
+
+
+<div className="row ">
 
 <LeftPanel/>
 

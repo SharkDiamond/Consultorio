@@ -1,6 +1,6 @@
 import {Line,Bar} from "react-chartjs-2";
 import '../App.css';
-
+import '../animacion.css';
 
 
 export default function halfPanel() {
@@ -17,23 +17,23 @@ export default function halfPanel() {
     
                 data: [12,12,34,345,42,34,45,46,56],
                 backgroundColor: [
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
     
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)'
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82',
+                    '#126E82'
     
                 ],
                 borderColor: [
-                    'rgb(88,227,197)'
+                    '#126E82'
                    
                 ],
     
@@ -53,14 +53,14 @@ export default function halfPanel() {
     
                 data: [12,12,34],
                 backgroundColor: [
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)',
-                    'rgb(88,227,197)'
+                    '#126E82',
+                    '#126E82',
+                    '#126E82'
                     
     
                 ],
                 borderColor: [
-                    'rgb(88,227,197)'
+                    '#126E82'
                    
                 ],
     
@@ -72,14 +72,14 @@ export default function halfPanel() {
 
 return(
 
-    <div className="d-none d-lg-block d-md-block col-lg-6  col-md-6 colorPanelMedio mr-auto ml-auto  pt-4 pl-5 pr-5 pb-4 borderDivsPrincipales rounded">
+    <div className="testx sombra d-none d-lg-block d-md-block col-lg-6  col-md-6 colorPanelMedio mr-auto ml-auto  pt-4 pl-5 pr-5 pb-4  ">
     
     <div className="row">
 
 
-    <div className="col-12">
+    <div className="col-12 testx">
 
-    <Line data={dataLineal} className="grafica p-3 rounded text-primary"/>
+    <Line data={dataLineal} className="grafica p-3  rounded text-primary"/>
     
     </div>
 
@@ -87,8 +87,8 @@ return(
 
     <div className="row">
 
-    <div className="col-12">
-    <Bar data={dataBar} className="grafica mt-3 p-3 rounded"/>
+    <div className="col-12 testx">
+    <Bar data={dataBar} className="grafica mt-3 p-3  rounded"/>
 
     </div>
     

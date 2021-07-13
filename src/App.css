@@ -22,6 +22,62 @@ h1,h2,h3,h4,h5{
 
 }
 
+.test2{
+position: top;
+width: 90px;
+background-color: rgb(87, 55, 55);
+
+}
+
+
+.botonFuera{
+
+background-color: #58e3c5;
+position: fixed;
+
+  width: 10px;
+  height: 30px;
+  
+  top: 36px;
+  margin-top: 13px;
+
+  border-radius: 30px;
+
+}
+.botonDentro{
+
+  background-color: #58e3c5;
+  position: fixed;
+  border-radius: 60px;
+  
+left: 193px;
+
+}
+
+.test{
+
+width: 230px;
+margin-left: -9px;
+background-color: #1e1f23;
+border-top:  1px solid;
+border-right:  1px solid;
+border-color: #58e3c5;
+padding-left: 20px;
+padding-top: 20px;
+border-radius: 3px;
+
+
+}
+
+
+.letramenuresponsive{
+
+  color: white;
+  font-family:"Amaranth-Regular";
+  font-size: 30px;
+  
+}
+
 
 @media screen and (max-width: 375%) {
 
@@ -63,7 +119,7 @@ h1,h2,h3,h4,h5{
 
   .color3{
     height:970px;
-    background-color: #151618;
+    background-color: #171717;
     ;
     
     }
@@ -147,12 +203,10 @@ h1,h2,h3,h4,h5{
 
 
 
-
-
 .borderDivsPrincipales{
 
 border:  1px solid;
-border-color: #58e3c5;
+border-color: #EDEDED;
 
 
 }
@@ -168,12 +222,12 @@ border-color: #58e3c5;
 height: 480px;
   overflow-y: scroll;
   scroll-behavior: smooth;
- background-color: #1e1f23;
+ background-color: #132C33;
 }
 
 .scroll-container::-webkit-scrollbar-thumb{
 
-  background-color: white;
+  background-color: #51C4D3;
 
 
 }
@@ -182,15 +236,22 @@ height: 480px;
 
   width: 7px;
   
-  background-color: #151618;
+  background-color: #132C33;
   
   }
 
+.sombra{
+  background: linear-gradient(225deg, #D8E3E7, #D8E3E7);
+  border-radius: 17px;
+  box-shadow: inset -5px 5px 10px #D8E3E7,
+  inset 5px -5px 10px #D8E3E7;
 
+
+}
 
   .scroll-Compromisos::-webkit-scrollbar-thumb{
 
-    background-color: white;
+    background-color: #51C4D3;
   
   
   }
@@ -198,13 +259,13 @@ height: 480px;
 
     width: 7px;
     
-    background-color: #151618;
+    background-color: #132C33;
     
     }
 
 .color{
 
-background-color: #1e1f23;
+background-color: #126E82;
 
 }
 
@@ -226,7 +287,7 @@ top: -70px;
 
 .color2{
 
-background-color: #1e1f23;
+background-color: #132C33;
 
 }
 
@@ -239,7 +300,11 @@ background-color: #1e1f23;
 
 }
 
+.titulo{
 
+  color:#126E82;
+
+}
 .color4{
 
   background-color: cornsilk;
@@ -251,7 +316,7 @@ background-color: #1e1f23;
 .borderColorImage{
 
   border:  3px solid;
- border-color: #58e3c5;
+ border-color: #51C4D3;
 
 
 }
@@ -264,23 +329,26 @@ background-color: #1e1f23;
 
 .colorTurquesa{
 
-  color: #58e3c5;
+  color: #51C4D3;
 
 
 }
 
+.colorgris{
 
+  color: #126E82;
+}
 
 .colorSalmon{
 
-  color: #df4944;
+  color: #D8E3E7;
 
 }
 
 
 .grafica{
 
-  background-color: #1e1f23;
+  background-color: #D8E3E7;
 }
 .botonComentar{
  
