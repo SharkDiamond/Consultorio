@@ -3,6 +3,7 @@ import {Col} from "react-bootstrap";
 
 
 class Pderecho extends Component {
+    
     constructor(props) {
         super(props)
 
@@ -13,9 +14,12 @@ class Pderecho extends Component {
 
     render() {
         return (
-            <Col lg={3} className="tamanoColorPaneles">
+            <Col lg={7} xs={12} className="tamanoColorPaneles ">
             
-                <h1>Panel Derecho</h1>
+                
+
+
+
             
             
             </Col>    
