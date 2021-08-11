@@ -22,7 +22,7 @@ class Barra extends Component {
 
     render() {
         return (
-            <Navbar className="barra pt-3"  expand="lg" >
+            <Navbar className="barra pt-3 fixed-top border-bottom border-dark border-2"  expand="lg" >
                        
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-rigth">

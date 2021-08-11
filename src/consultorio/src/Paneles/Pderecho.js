@@ -14,7 +14,7 @@ class Pderecho extends Component {
 
     render() {
         return (
-            <Col lg={7} xs={12} className="tamanoColorPaneles ">
+            <Col lg={7} xs={12} className="tamanoColorPaneles">
             
                 
 

@@ -16,7 +16,7 @@ class App extends React.Component {
         <Row><Barra/></Row>
         
 
-        <Row className="justify-content-center mt-4">
+        <Row className="justify-content-center mt-4 p-2">
 
           <Pizquierdo/>
 

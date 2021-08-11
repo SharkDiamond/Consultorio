@@ -15,11 +15,15 @@ class Pizquierdo extends Component {
 
     render() {
         return (
-           <Col lg={4} xs={12} className="tamanoColorPaneles ">
+           <Col lg={4} xs={12} className="tamanoColorPaneles mb-2">
                
-               <Row className="p-4">
+               <Row className="ps-4 pe-4 pt-1">
                     
+               <Col lg={12}>
                     
+                    <h3 className="Titulos">Citas Medicas</h3>
+                    
+                    </Col>
                    
                     <Col className="tamanoListaCitasMedicas border rounded-3 p-3 " >
                     
@@ -59,8 +63,26 @@ class Pizquierdo extends Component {
                         </ol>
                 
                         </Col>
-                        
-                    <Col lg={12}className="tamanoListaCompromisos mt-5"> </Col>
+                    
+                    <Col lg={12} className="pt-1">
+                    
+                    <h3 className="Titulos">Compromisos</h3>
+                    
+                    </Col>
+
+                    <Col lg={12}className="tamanoListaCompromisos border rounded-3 p-3 "> 
+                    
+                        <ol>
+                        <li className="h5 text-white">Reunion Junta Directiva - <span style={{color:"#52c4d3"}}>8 pm</span></li>
+                        <li className="h5 text-white">Comida en Familia - <span style={{color:"#52c4d3"}}>3 pm</span></li>
+                        <li className="h5 text-white">Operacion De Espalda - <span style={{color:"#52c4d3"}}>5 pm</span></li>
+                        <li className="h5 text-white">Reunion Junta Directiva - <span style={{color:"#52c4d3"}}>8 pm</span></li>
+                        <li className="h5 text-white">Comida en Familia - <span style={{color:"#52c4d3"}}>3 pm</span></li>
+                        <li className="h5 text-white">Operacion De Espalda - <span style={{color:"#52c4d3"}}>5 pm</span></li>
+                        </ol>
+                    
+                    
+                    </Col>
 
                 </Row>
 
