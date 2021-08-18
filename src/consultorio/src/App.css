@@ -17,6 +17,52 @@
 
 }
 
+.Pruebas{
+
+background-color: rgb(20, 45, 52);
+
+height: 550px;
+margin-right: 42px;
+margin-left: 20px;
+border-radius: 10px;
+animation: myAnim 1s linear 0s 1 alternate both;
+
+}
+
+@keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: rotateX(-100deg);
+      transform-origin: top;
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+      transform-origin: top;
+    }
+  }
+
+
+.Pruebas2{
+
+    background-color: rgb(20, 45, 52);
+    animation: myAnim 1s linear 0s 1 alternate both;
+    height: 550px;
+    border-radius: 10px;
+    }
+
+    .prueba3{
+
+
+        border-radius: 0px 100px 0px 100px;
+
+
+
+        width: 100%;
+        height: 35%;
+        background-color: lightcyan;
+    }
 
 .tamanoListaCitasMedicas{
     

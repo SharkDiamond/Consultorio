@@ -15,7 +15,7 @@ class Pizquierdo extends Component {
 
     render() {
         return (
-           <Col lg={4} xs={12} className="tamanoColorPaneles mb-2">
+           <Col lg="auto" xs={12} md={4} xl={4} className="tamanoColorPaneles mb-2">
                
                <Row className="ps-4 pe-4 pt-1">
                     
