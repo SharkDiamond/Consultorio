@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Row,Col} from "react-bootstrap";
+import {Bar} from "react-chartjs-2";
+
 
 class Pacientes extends Component {
     
@@ -11,36 +13,95 @@ class Pacientes extends Component {
         }
     }
 
+    
+
+
+
+
     render() {
+
+        const data = {
+            labels: ['Reportes', 'Citas', 'Emergencias', 'Pendientes'],
+            datasets: [
+              {
+                label: 'Informacion General',
+                data: [45, 35, 30, 57],
+                backgroundColor: 'rgb(216,227,231,0.2)',
+                borderColor: '#52c4d3',
+                borderWidth: 2,
+                Color:'#52c4d3'
+                
+              },
+              
+            ],
+          };
+          
+          const options = {
+            scale: {
+                ticks: {
+                  min: 0,
+                  max: 16,
+                  stepSize: 5,
+                  showLabelBackdrop: false,
+                  backdropColor: "rgba(150, 197, 11, 1)",
+                  color:"blue"
+                  
+                },
+                ticks: { beginAtZero: true }
+                
+                ,
+                angleLines: {
+                  color: "rgba(255, 255, 255, .3)",
+                  lineWidth: 7
+                },
+                gridLines: {
+                  color: "red",
+                  circular: true
+                }
+              }
+          };
+
+
+
         return (
-            <Row className="p-4">
+            <Row className="pt-2 ">
             
-                <Col lg={4} xs={12} className="Pruebas  pt-4">
-                    <Col lg={12} className="text-center">
-                    <img src="https://www.uchile.cl/image/f145520-2-h.jpeg?5259"  width="190px" height="170px"  className=" rounded-circle " />
+                <Col lg={12} xs={12} className="">
+                   
+                   <Row className=" p-4   justify-content-center">
+                    <Col lg={4} className="text-center  me-5 Pruebas ">
+                    <img src="https://www.uchile.cl/image/f145520-2-h.jpeg?5259"  width="190px" height="170px"  className=" rounded-circle mt-2" />
+                    <h6 className=" fw-bold mt-2" style={{color:"#126e82"}}>Jose Orlando</h6>
+                    <h6 className="fw-bold" style={{color:"#126e82"}}>Gonzales Cegarra</h6>
+                    <h6 className="fw-bold" style={{color:"#126e82"}}>22 Años</h6>
+                    <hr className=" fw-bold"/>
+                   
+                    
                     </Col>
-
-                    <h3 className="text-white mt-3 fw-bold text-center">Jose Orlando</h3>
                     
-                    <h4 className="text-white  fw-bold text-center">Gonzales Cegarra</h4>
-                    <h3 className="text-white  fw-bold text-center">22 Años</h3>
-                    <hr className="text-white fw-bold"/>
-                    <div className="prueba3 p-2">
-                    <h5 className=" mb-3 ms-1 fw-bold text-left text-dark">Informacion Medica</h5>
-                    <h6 className="text-dark mb-3 text-right ms-1 fw-bold">Condiciones: Ninguna</h6>
-                    <h6 className="text-dark mb-3 text-right ms-1 fw-bold">Ultima Cita: Sin Registros</h6>
-                    <h6 className="text-dark mb-3 text-right ms-3 fw-bold">Seguro: Ninguna</h6>
-                    <h6 className="text-dark mb-3 text-right ms-5 fw-bold">CAMPO: Sin Registros</h6>
-                    </div>
+                   <Col lg={6} className="   Pruebas pt-2">
                     
-                </Col>
+                    <h4 className="   fw-bold text-center " style={{color:'#126e82'}}>Informacion Medica</h4>
+                    <h6 className=" text-right ms-3 mt-4 fw-bold" style={{color:'#126e82'}}>Condiciones: <span className="text-dark"> Sin Registros</span> </h6>
+                    <h6 className="text-right ms-3 mt-3 fw-bold" style={{color:'#126e82'}}>Ultima Cita:<span className="text-dark"> Sin Registros</span> </h6>
+                    <h6 className=" text-right ms-3 mt-3 fw-bold" style={{color:'#126e82'}}>Seguro:<span className="text-dark"> Sin Registros</span> </h6>
+                    <h6 className=" text-right ms-3 mt-3  fw-bold" style={{color:'#126e82'}}>CAMPO:<span className="text-dark"> Sin Registros</span> </h6>
+                   
+                    </Col>
+                    </Row>
 
-                <Col lg={7} xs={12} className="Pruebas2 ">
-
+                    <Row className=" justify-content-center"  >
+                <Col lg={10} xs={12} className="Pruebas2 ">
+                <Bar height={97}   data={data} options={options} />
 
 
                 </Col>
-            
+                
+                </Row>
+
+
+                </Col>
+                
             
             </Row>
 

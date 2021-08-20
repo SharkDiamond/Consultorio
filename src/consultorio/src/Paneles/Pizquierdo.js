@@ -25,41 +25,25 @@ class Pizquierdo extends Component {
                     
                     </Col>
                    
-                    <Col className="tamanoListaCitasMedicas border rounded-3 p-3 " >
+                    <Col className="tamanoListaCitasMedicas  rounded-3 p-3 " >
                     
                         <ol >
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Gabriel Arispe - <span className="text-white">Dolor De Cabeza - </span><Button variant="outline-light">C</Button></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h5">Miranda Castro - <span className="text-white">Malestar General</span></li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
-                        <li className="h4">test</li>
-                        <hr  style={{height:'5px',color:"#ffffff"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
+                        <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
+                        <hr  style={{height:'5px',color:"#142d34"}}/>
                         </ol>
                 
                         </Col>
@@ -70,15 +54,19 @@ class Pizquierdo extends Component {
                     
                     </Col>
 
-                    <Col lg={12}className="tamanoListaCompromisos border rounded-3 p-3 "> 
+                    <Col lg={12}className="tamanoListaCompromisos  rounded-3 p-3 "> 
                     
                         <ol>
-                        <li className="h5 text-white">Reunion Junta Directiva - <span style={{color:"#52c4d3"}}>8 pm</span></li>
-                        <li className="h5 text-white">Comida en Familia - <span style={{color:"#52c4d3"}}>3 pm</span></li>
-                        <li className="h5 text-white">Operacion De Espalda - <span style={{color:"#52c4d3"}}>5 pm</span></li>
-                        <li className="h5 text-white">Reunion Junta Directiva - <span style={{color:"#52c4d3"}}>8 pm</span></li>
-                        <li className="h5 text-white">Comida en Familia - <span style={{color:"#52c4d3"}}>3 pm</span></li>
-                        <li className="h5 text-white">Operacion De Espalda - <span style={{color:"#52c4d3"}}>5 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+                        <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
+
                         </ol>
                     
                     
