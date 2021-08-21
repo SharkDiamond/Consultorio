@@ -61,9 +61,9 @@ class Graficas extends Component {
 
 
         return (
-            <Row className="pe-3 ps-3 pt-3">
+            <Row className="pe-3 ps-3 pt-3  ">
 
-                <Col lg={12}  >
+                <Col lg={12}  className="bg-white mb-2 border rounded">
                     
                     <Line  height={Tamaños[window.screen.width]}   data={data} options={options}/>
                     
@@ -71,7 +71,7 @@ class Graficas extends Component {
                 </Col>
 
 
-                <Col lg={12}>
+                <Col lg={12} className="bg-white border rounded">
                     
                         
                     <Bar  height={Tamaños[window.screen.width]} data={data} options={options}/>

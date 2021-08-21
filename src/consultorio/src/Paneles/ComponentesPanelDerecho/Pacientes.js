@@ -26,8 +26,8 @@ class Pacientes extends Component {
               {
                 label: 'Informacion General',
                 data: [45, 35, 30, 57],
-                backgroundColor: 'rgb(216,227,231,0.2)',
-                borderColor: '#52c4d3',
+                backgroundColor: '#126e82',
+                
                 borderWidth: 2,
                 Color:'#52c4d3'
                 
@@ -68,7 +68,7 @@ class Pacientes extends Component {
             
                 <Col lg={12} xs={12} className="">
                    
-                   <Row className=" p-4   justify-content-center">
+                   <Row className=" p-4 justify-content-center">
                     <Col lg={4} className="text-center  me-5 Pruebas ">
                     <img src="https://www.uchile.cl/image/f145520-2-h.jpeg?5259"  width="190px" height="170px"  className=" rounded-circle mt-2" />
                     <h6 className=" fw-bold mt-2" style={{color:"#126e82"}}>Jose Orlando</h6>

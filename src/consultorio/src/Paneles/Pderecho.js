@@ -43,7 +43,7 @@ class Pderecho extends Component {
         if (!this.props.noMostrar) {
            
         return (
-            <Col  lg={7} xs={12} md={7} xl={7} className="tamanoColorPaneles">
+            <Col  lg={7} xs={12} md={7} xl={7} className="tamanoColorPaneles  ">
             
               {this.state.Muestra=="Graficas"  && <Graficas/>}  
 
