@@ -32,7 +32,7 @@ class Server{
 
     routes(){
 
-      
+      this.app.use("/Session",require("../Routes/Usuarios"));
        
     } 
 

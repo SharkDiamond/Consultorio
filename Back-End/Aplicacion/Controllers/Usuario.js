@@ -7,11 +7,15 @@ const Usuario=require("../Data/Users");
 const CreateUsers= async (req,res)=>{
 
     try {
-
+        
         const {name,password}=req.body;
+
         let passwordEncriptado=encriptar.hashSync(password,10);
+
         const newusuario=new Usuario(name,passwordEncriptado);
+
         await newusuario.save();
+
         res.status(201).json({msj:"Usuario "+req.body.nombre+" Creado!"}).end();
     
     } catch (error) {
