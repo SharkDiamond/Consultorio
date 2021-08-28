@@ -1,22 +1,23 @@
+//EXPORTACIONES DE PAQUETES EXTERNOS
 const encriptar=require("bcrypt");
-const {request,response}=("express");
-
+//EXPORTACIONES INTERNAS
 const {token}=require("../Helpers/GenerateJwt");
 const Usuario=require("../Data/Users");
 
+//CREACION DEL USUARIO
 const CreateUsers= async (req,res)=>{
 
     try {
         
-        const {name,password}=req.body;
-
         let passwordEncriptado=encriptar.hashSync(password,10);
 
-        const newusuario=new Usuario(name,passwordEncriptado);
+        req.body.password=passwordEncriptado;
+
+        const newusuario=new Usuario(req.body);
 
         await newusuario.save();
 
-        res.status(201).json({msj:"Usuario "+req.body.nombre+" Creado!"}).end();
+        res.status(201).json({msj:"Usuario "+req.body.Usuario+" Creado!"}).end();
     
     } catch (error) {
         
@@ -26,10 +27,12 @@ const CreateUsers= async (req,res)=>{
    
 }
 
-const TokenUser = async (req=request,res=response)=>{
+//DEVOLUCION DE TOKEN AL USUARIO CUANDO LAS VALIDACIONES SALGAN BIEN
+const TokenUser =(req,res)=>{
 
-   res.status(200).json({Enter:true,keys:token()});
+  res.status(200).json({Enter:true,keys:token()});
 
 }
 
+//EXPORTACION DE FUNCIONES
 module.exports={CreateUsers,TokenUser};

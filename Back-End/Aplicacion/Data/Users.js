@@ -1,28 +1,34 @@
 const {Schema,model}=require("mongoose");
 
-
-
 const UsuarioSchema=Schema({
 
-nombre:{
+Usuario:{
 type:String,
-require:[true,"El nombre es obligatorio"],
+require:[true,"El Usuario es obligatorio"],
 unique:[true,"El usuario ya existe"]
 
 },
-password:{
+Password:{
 type:String,
-require:[true,"El password es obligatorio"]
+require:[true,"El Password es obligatorio"]
 
 },
-estado:{
-type:Boolean,
-default:true
+Nombre:{
+type:String,
+require:[true,"El Nombre es necesario"]
+
+},
+Apellido:{
+type:String,
+require:[true,"El Apellido es requerido"]
+
+
 
 }
+
 
 });
 
 
 
-module.exports=model("Usuario",UsuarioSchema);
+module.exports=model("User",UsuarioSchema);
