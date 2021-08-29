@@ -9,9 +9,9 @@ const CreateUsers= async (req,res)=>{
 
     try {
         
-        let passwordEncriptado=encriptar.hashSync(password,10);
+        let passwordEncriptado=encriptar.hashSync(req.body.Password,10);
 
-        req.body.password=passwordEncriptado;
+        req.body.Password=passwordEncriptado;
 
         const newusuario=new Usuario(req.body);
 
@@ -28,10 +28,24 @@ const CreateUsers= async (req,res)=>{
 }
 
 //DEVOLUCION DE TOKEN AL USUARIO CUANDO LAS VALIDACIONES SALGAN BIEN
-const TokenUser =(req,res)=>{
+const TokenUser = async (req,res)=>{
 
-  res.status(200).json({Enter:true,keys:token()});
+    try {
 
+        const Token= await token();
+
+        res.status(200).json({Enter:true,"Keys":Token}).end();
+
+} 
+
+    catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({Problem:"Hubo un problema al generar el token."}).end();
+
+}
+    
 }
 
 //EXPORTACION DE FUNCIONES

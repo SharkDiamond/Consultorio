@@ -1,5 +1,4 @@
-//EXPORTACIONES DE PAQUETES EXTERNOS
-const encriptar=require("bcrypt");
+
 //EXPORTACIONES INTERNAS
 const User=require("../Data/Users");
 
@@ -13,16 +12,9 @@ const valideuser= async(req,res,next)=>{
         
         //OBJECT USER 
         const Ouser= await User.find({"Usuario":Usuario});
-
         //SI NO EXISTE EL USUARIO
-        if (Ouser==null || Ouser==undefined || Ouser.length==0) throw new Error("El usuario no existe!");
+        if (Ouser.length==1) throw new Error("El usuario ya existe!");
       
-        //VALIDANDACION DE CONTRASEÑAS
-        const Pase = await encriptar.compare(Password,Ouser.Password);
-        
-        //SI LA CONTRASEÑA ES INCORRECTA
-        if(!Pase) throw new Error("Password incorrecto!");
-
         //SI TODO SALE BIEN
         next();
 
@@ -31,7 +23,6 @@ const valideuser= async(req,res,next)=>{
     catch (error){
         //RESPONDIEDO CON EL ERROR
          res.status(401).json({msj:""+error}).end();
-    
     }
 
 }

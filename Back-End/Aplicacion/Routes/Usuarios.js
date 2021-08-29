@@ -18,16 +18,16 @@ const validateRequest= async (req,response,next)=>{
 }
 
 //CREACION DE USUARIOS
-router.post("/CreateUsers",[check("El usuario debe tener minimo 6 caracteres y maximo 20 caracteres!").isLength({min:6,max:20}),
+router.post("/CreateUsers",[check("Usuario","El usuario debe tener minimo 6 caracteres y maximo 20 caracteres!").isLength({min:6,max:20}),
 check("Password","La contraseña debe tener minimo 8 caracteres!").isLength({min:6,max:18}),
 check("Nombre","El nombre debe de tener mas de 2 caracteres!").isLength({min:3,max:20}),
 check("Apellido","El apellido debe tener mas de un caracter!").isLength({min:2,max:20}),
-validateRequest],CreateUsers);
+validateRequest,valideuser],CreateUsers);
 
 //INICIO DE SESION
 router.post("/Users",[check("Usuario","El usuario no puede estar vacio!").not().isEmpty().isLength({min:6,max:20}).withMessage("El usuario debe tener minimo 6 caracteres y maximo 20 caracteres!"),
                       check("Password","El Password no puede estar vacio!").not().isEmpty().isLength({min:6,max:18}).withMessage("La contraseña debe tener minimo 8 caracteres!"),
-                      validateRequest,valideuser],TokenUser);
+                      validateRequest],TokenUser);
 
 //EXPORTANDO EL ROUTER
 module.exports=router;
