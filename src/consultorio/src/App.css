@@ -1,8 +1,11 @@
+/* Color de fondo de la barra */
 .barra{
+    
     background-color: rgb(216, 227, 231);
 
 }
 
+/* Clase para los paneles izquierdo y derecho de la aplicacion */
 .tamanoColorPaneles{
     
     position: relative;
@@ -17,18 +20,18 @@
 
 }
 
-.Pruebas{
+/*Color de fondo y animacion del panel superior del componente pacientes */
+.animacionFilaSuperior-Pacientes{
 
     background-color: rgb(216, 227, 231);
 
-height: 270px;
-
-
-border-radius: 10px;
-animation: myAnim 1s linear 0s 1 alternate both;
+    height: 270px;
+    border-radius: 10px;
+    animation: myAnim 1s linear 0s 1 alternate both;
 
 }
 
+/*Animacion del panel */
 @keyframes myAnim {
     0% {
       opacity: 0;
@@ -41,45 +44,23 @@ animation: myAnim 1s linear 0s 1 alternate both;
       transform: rotateX(0deg);
       transform-origin: top;
     }
-  }
+}
 
-
-.Pruebas2{
+/* Color de fondo y animacion de la fila inferior del panel pacientes */
+.animacionFilaInferior-Pacientes{
     
     background-color: rgb(216, 227, 231);
     animation: myAnim 1s linear 0s 1 alternate both;
     height: 240px;
     border-radius: 10px;
-    }
-
-.pruebaD{
-
-margin-right: 30px;
-
-}
-.prueban{
-display:flex ;
-height: 400px;
-
-
 }
 
-    .prueba3{
 
-
-        border-radius: 10px 10px 10px 10px;
-
-        width: 50%;
-        height: 85%;
-        background-color:  rgb(216, 227, 231);
-    }
-
+/* Clase para el div de las citas medicas del panel izquierdo */
 .tamanoListaCitasMedicas{
     
     overflow-y: scroll;
     scroll-behavior: smooth;
-
-    
     display: block;
     width: 380px;
     height: 350px;
@@ -88,27 +69,29 @@ height: 400px;
     background-color: rgb(216, 227, 231);
 }
 
+/* Clase para el div de los compromisos del panel izquierdo */
 .tamanoListaCompromisos{
 
     background-color: rgb(216, 227, 231);
-display: block;
-height: 145px;
 
-overflow-y: scroll;
-scroll-behavior: smooth;
-
+    display: block;
+    height: 145px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 
 }
 
+/* Clase para los titulos de los divs internos */
 .Titulos{
-font-size: 27px;
-font-weight: bold;
-color: #52c4d3;
-text-align: center;
+
+    font-size: 27px;
+    font-weight: bold;
+    color: #52c4d3;
+    text-align: center;
 
 }
 
-
+/* ScrollBar del div interno de las citas medicas */
 .tamanoListaCitasMedicas::-webkit-scrollbar{
     
     width: 7px;
@@ -117,12 +100,14 @@ text-align: center;
 
 }
 
+/* THUM DEL SCROL DEL DIV DE LAS CITAS MEDICAS */
 .tamanoListaCitasMedicas::-webkit-scrollbar-thumb{
 
-background-color: rgb(82, 196, 211);
+    background-color: rgb(82, 196, 211);
 
 }
 
+/* ScrollBar DEL DIV INTERNO DE LOS COMPROMISOS */
 .tamanoListaCompromisos::-webkit-scrollbar{
 
     width: 7px;
@@ -132,8 +117,8 @@ background-color: rgb(82, 196, 211);
 
 }
 
+/* THUM DEL SCROL DEL DIV DE LOS COMPROMISOS */
 .tamanoListaCompromisos::-webkit-scrollbar-thumb{
-
 
     background-color: rgb(82, 196, 211);
 
