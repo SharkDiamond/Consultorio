@@ -5,6 +5,19 @@
 
 }
 
+
+/*  <Row><Barra/></Row>
+        
+        <Row className="justify-content-center mt-4 p-2">
+
+          <Pizquierdo/>
+
+          <Pderecho/>
+
+        </Row>
+        */
+
+
 /* Clase para los paneles izquierdo y derecho de la aplicacion */
 .tamanoColorPaneles{
     
@@ -20,6 +33,10 @@
 
 }
 
+
+.tamaño-Fila-Login{
+   height: 100vh;
+}
 /*Color de fondo y animacion del panel superior del componente pacientes */
 .animacionFilaSuperior-Pacientes{
 
