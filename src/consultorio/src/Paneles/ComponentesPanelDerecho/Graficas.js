@@ -1,7 +1,8 @@
+//IMPORTACIONES DE PAQUETES
 import React, { Component } from 'react';
 import {Row,Col} from "react-bootstrap";
 import { Line,Bar } from 'react-chartjs-2';
-
+//IMPORTACIONES PROPIAS
 
 class Graficas extends Component {
     constructor(props) {
@@ -26,8 +27,8 @@ class Graficas extends Component {
         1024:92,
         1440:200,
         1536:100,
-        2560:60
-
+        2560:60,
+        1920:102
 
 
       };

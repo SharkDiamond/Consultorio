@@ -8,14 +8,39 @@ import Principal from './Principal';
 
 class App extends React.Component {
   
+  constructor(props){
+
+    super(props);
+
+    this.state={
+
+      pase:localStorage.getItem("Paso")
+
+    }
+
+
+  }
+
+    updatePase=()=>{
+
+      this.setState({
+
+          pase:localStorage.getItem("Paso")
+
+      });
+
+
+  }
+
+
 
   render(){
 
     return (
-      <Container fluid={true} className="">
-    
-      <Login/>
-      
+      <Container fluid={true} >
+        
+        {this.state.pase ? <Principal/> : <Login updateApp={this.updatePase}/>}
+        
       </Container>
     );
 

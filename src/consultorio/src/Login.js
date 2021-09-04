@@ -1,6 +1,11 @@
+//IMPORTACIONES DE PAQUETES
 import React, { Component } from 'react';
-import {Row,Col,Form,FormControl,FormGroup,FormLabel, Button} from "react-bootstrap";
+import {Row,Col,Form,FormControl,FormGroup,FormLabel, Button, Alert} from "react-bootstrap";
+import axios from "axios";
+//IMPORTACIONES PROPIAS
 import './App.css';
+
+
 
 class Login extends Component {
     
@@ -13,10 +18,48 @@ class Login extends Component {
             Usuario:"",
             Password:""
         }
+    
+    
+    this.handleChange=this.handleChange.bind(this);
+
+    this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     
+    handleChange(event){
 
+        this.setState({
+
+
+            [event.target.name]:event.target.value
+
+        })
+
+    }
+
+
+  async  handleSubmit(event){
+
+        event.preventDefault();
+
+try {
+
+   const response = await axios.post("http://172.26.9.215:8081/Session/Users",{"Usuario":this.state.Usuario,"Password":this.state.Password});
+    
+    localStorage.setItem("Paso",response.data.Enter);
+
+    localStorage.setItem("Token",response.data.Keys);
+
+    this.props.updateApp();
+
+} catch (error) {
+    
+    alert(error);
+
+}
+
+}
+     
 
     render() {
         return (
@@ -26,18 +69,19 @@ class Login extends Component {
                 
                 <h1 className="mb-4 fw-bold">Doctor Consulting</h1>
                
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
 
                     <Row className="justify-content-center">
-                        <Col lg={8} >
+                        <Col xl={6}>
                             <FormGroup>
                    
-                                <FormControl placeholder="User" type="text"/>
+                                <FormControl placeholder="User" name="Usuario" value={this.Usuario} onChange={this.handleChange} type="text"/>
                                 <br/>
                    
-                                <FormControl placeholder="Password" type="Password" />
+                                <FormControl placeholder="Password" name="Password" value={this.Password} onChange={this.handleChange} type="Password" />
                                 <br/>
-                                <Button type="submit" variant="primary">Entrar</Button>
+
+                                <Button type="submit" variant="primary" >Entrar</Button>
                  
                             </FormGroup>
                         </Col>
