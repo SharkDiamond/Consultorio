@@ -60,10 +60,30 @@ class Pacientes extends Component {
 
         return (
             <Row className="pt-2">
-            
-                <Col lg={12} xs={12} className="">
-                   
-                   <Row className="p-4 justify-content-center">
+                 
+                 
+
+
+                <Col lg={12} xs={12} >
+
+                  <Row className="ms-5">
+                    
+                    <Col lg={3} className="pt-1">
+
+                      <input placeholder="Buscar Paciente" className="rounded"  /> 
+                     
+                    </Col>
+               
+                    <Col lg={1} className="">
+
+                    <input type="submit" value="seacrh" className="btn btn-light" />
+
+                    </Col>
+
+                </Row>
+
+
+                   <Row className="pt-2 pe-4 ps-4 pb-3 justify-content-center">
                     <Col lg={4} className="text-center  me-5 animacionFilaSuperior-Pacientes">
                     <img src="https://www.uchile.cl/image/f145520-2-h.jpeg?5259"  width="190px" height="170px"  className=" rounded-circle mt-2" />
                     <h6 className=" fw-bold mt-2" style={{color:"#126e82"}}>Jose Orlando</h6>

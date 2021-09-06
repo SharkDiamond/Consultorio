@@ -44,11 +44,13 @@ class Login extends Component {
 
 try {
 
-   const response = await axios.post("http://172.26.9.215:8081/Session/Users",{"Usuario":this.state.Usuario,"Password":this.state.Password});
+   const response = await axios.post("http://localhost:8081/Session/Users",{"Usuario":this.state.Usuario,"Password":this.state.Password});
     
-    localStorage.setItem("Paso",response.data.Enter);
+    sessionStorage.setItem("Paso",response.data.Enter);
 
-    localStorage.setItem("Token",response.data.Keys);
+    sessionStorage.setItem("Usuario",this.state.Usuario);
+
+    sessionStorage.setItem("Token",response.data.Keys);
 
     this.props.updateApp();
 

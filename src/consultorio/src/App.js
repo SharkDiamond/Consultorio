@@ -14,7 +14,7 @@ class App extends React.Component {
 
     this.state={
 
-      pase:localStorage.getItem("Paso")
+      pase:sessionStorage.getItem("Paso")
 
     }
 
