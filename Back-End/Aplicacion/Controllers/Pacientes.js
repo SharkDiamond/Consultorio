@@ -9,11 +9,15 @@ const createPaciente=async(req,res)=>{
 
         await nPaciente.save();
 
-        res.status(201).json({"result":"Paciente"+req.body.Nombre+" Creado!"}).end();
+        res.status(201).json({"result":"Paciente "+req.body.Nombre+" Creado!"}).end();
 
     } catch (error) {
         
-        res.status(401).json({Problems:"Hubo un problema al crear el paciente"+error}).end();
+        //CONVIRTIENDO EL ERROR A CADENA
+        const errorSpecific=""+error;
+        
+       //MANEJANDO EL ERROR DE LLAVE DUPLICADA 
+       if(errorSpecific.split(" ")[9]=='dup') res.status(401).json({Problems:"Ya existe un paciente con esa identificacion!"}).end();
 
     }
 

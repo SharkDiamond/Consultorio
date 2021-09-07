@@ -1,5 +1,6 @@
 //IMPORTACIONES EXTERNAS
 const {Router}=require("express");
+const {check}=require("express-validator");
 //IMPORTACIONES INTERNAS
 const {createPaciente}=require("../Controllers/Pacientes");
 
