@@ -21,23 +21,28 @@ class Server{
 
     middlewares(){
 
-        this.app.use(express.static("public"));
+       this.app.use(express.static("public"));
         
        this.app.use(express.json());
         
-        this.app.use(cors());
+       this.app.use(cors());
         
     }
 
 
     routes(){
-
+       
+      //RUTA PARA USUARIOS  
       this.app.use("/Session",require("../Routes/Usuarios"));
        
+      //RUTA PARA PACIENTES
+      this.app.use("/Pacientes",require("../Routes/Pacientes"));  
+
+      
     } 
 
     Escuchar(){
-        
+        //PUERTO DE ESCUCHA
        this.app.listen(8081);
 
     }

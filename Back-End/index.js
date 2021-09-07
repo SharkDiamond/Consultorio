@@ -1,7 +1,8 @@
+//IMPORTACIONES INTERNAS
 const Server = require('./Aplicacion/Models/Server');
-require('dotenv').config();
 
+//CREANDO EL OBJETO SERVER
 const server=new Server();
 
-console.log(process.env.DB_HOST);
+//ESCUCHANDO EN EL PUERTO
 server.Escuchar();

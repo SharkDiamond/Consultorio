@@ -1,37 +1,32 @@
 const {Schema,model}=require("mongoose");
 
-const Pacientes=new Schema({
+const Pacientes=Schema({
 
 Identificacion:{
-Type:String,
-unique:[true,"Ya existe un paciente con ese numero de identificacion!"]
+    type:String,
+    require:[true,"La identificacion del paciente es necesario!"],
+    unique:[true,"Ya existe un paciente con ese numero de identificacion!"]
 },
 
 Nombre:{
-    Type:String,
+    type:String,
     require:[true,"El nombre es necesario!"]
-    
 },
 Apellido:{
-Type:String,
-require:[true,"El apellido es requerido!"]
-
-
+    type:String,
+    require:[true,"El apellido es requerido!"]
 },
 FechaNacimiento:{
-Type:Date,
-require:[true,"La fecha de nacimiento es necesaria!"]
-
-
+    type:Date,
+    require:[true,"La fecha de nacimiento es necesaria!"]
 },
 Condiciones:{
-Type:String,
-require:false
+    type:String,
+    require:false
 },
 Seguro:{
-Type:String,
-require:false
-
+    type:String,
+    require:false
 }
 
 });

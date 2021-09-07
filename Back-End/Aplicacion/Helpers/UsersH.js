@@ -2,15 +2,16 @@ const User=require("../Data/Users");
 
 const userExist=async(user)=>{
 
-    try {
+    try{
         
         const searhUser=await User.find({Usuario:user});
 
-        if(searhUser.length>0)  throw new Error("El Usuario ya existe!");
+        if(searhUser.length>0)  throw new Error("El Nombre de Usuario ya existe!");
 
-    } catch (error) {
+    }catch(error) {
         
-        console.log(error);
+        throw new Error(error);
+        
 
     }
 
