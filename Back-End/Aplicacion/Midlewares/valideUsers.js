@@ -1,7 +1,13 @@
+//IMPORTACIONES EXTERNAS
+const jwt=require("jsonwebtoken");
+
 
 //EXPORTACIONES INTERNAS
 const User=require("../Data/Users");
 const Encriptar=require("bcrypt");
+
+
+
 //PARA VALIDAR USUARIO Y PASSWORD
 const valideuser= async(req,res,next)=>{
  
@@ -35,5 +41,28 @@ const valideuser= async(req,res,next)=>{
 }
 
 
+const chekoutToken=async(req,res,next)=>{
+    
+    const {token}=req.headers;
+    
+    try{
+
+        const Token=jwt.verify(token,"M@NT30UI11@"); 
+        
+        next();
+
+    }
+
+    catch(error){
+
+        //RESPONDIENDO EN EL CASO DE QUE HAYA UN PROBLEMA
+        res.status(401).json({error:"Token no valido " + error.message}).end();
+
+}
+
+
+}
+
+
 //EXPORTACION DE FUNCIONES
-module.exports={valideuser};
+module.exports={valideuser,chekoutToken};
