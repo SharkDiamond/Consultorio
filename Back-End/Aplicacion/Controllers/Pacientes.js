@@ -42,7 +42,28 @@ const deletePaciente=async(req,res)=>{
     }
 
 }
+ 
+const getPacientes=async(req,res)=>{
+    
+    try {
+        
+        const {campo,dato}=req.body;
+
+        const object={};
+
+        object[campo]={$regex:dato+'.*'};
+
+        const data=await Paciente.find(object);
+
+        res.status(200).json(data).end();
+
+    } 
+    
+    catch (error) {
+        res.status(500).json({Problems:error.message}).end();
+    }
+
+}
 
 
-
-module.exports={createPaciente,deletePaciente};
+module.exports={createPaciente,deletePaciente,getPacientes};
