@@ -2,7 +2,7 @@
 const {Router}=require("express");
 const {check,validationResult}=require("express-validator");
 //IMPORTACIONES INTERNAS
-const {createPaciente,deletePaciente,getPacientes}=require("../Controllers/Pacientes");
+const {createPaciente,deletePaciente,getPacientes,updatePaciente}=require("../Controllers/Pacientes");
 const {chekoutToken}=require("../Midlewares/valideUsers");
 const router=Router();
 
@@ -31,6 +31,9 @@ router.delete("/DeletePaciente",[check("Identificacion","Es necesaria la identif
 //OBTENER PACIENTES
 router.get("/GetPacientes",[check("campo","El campo indicado no coincide!").isIn(["Nombre","Apellido","Identificacion","FechaNacimiento","Seguro"]),
                             check("dato","El dato enviado no puede estar vacio!").not().isEmpty(),validateRequest,chekoutToken],getPacientes);
+
+
+router.put("/UpdatePaciente",[check("Identificacion","Es necesaria la identificacion del paciente").not().isEmpty(),validateRequest,chekoutToken],updatePaciente);
 
                             
 module.exports=router;

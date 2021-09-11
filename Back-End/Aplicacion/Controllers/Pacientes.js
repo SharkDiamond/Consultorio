@@ -21,8 +21,7 @@ const createPaciente=async(req,res)=>{
     }
 
 }
-
-
+//PARA ELIMINAR PACIENTES
 const deletePaciente=async(req,res)=>{
 
     try{
@@ -42,7 +41,7 @@ const deletePaciente=async(req,res)=>{
     }
 
 }
- 
+ //PARA OBTENER PACIENTES
 const getPacientes=async(req,res)=>{
     
     try {
@@ -64,6 +63,35 @@ const getPacientes=async(req,res)=>{
     }
 
 }
+//PARA ACTUALIZAR INFORMACION DE LOS PACIENTES
+const updatePaciente=async(req,res)=>{
+
+   const {Identificacion,...resto}=req.body;
+    
+   const keysBody= Object.keys(req.body);
+    
+   const Parametros=["Nombre","FechaNacimiento","Condiciones","Seguro"];
+
+   const respuesta=Parametros.includes(keysBody[1]);
+    
+   if(!respuesta) return res.status(400).json({Problems:"El campo indicado no existe!"}).end();
+    
+    
+    try{
+
+       const update= await Paciente.findOneAndUpdate({"Identificacion":Identificacion},resto);
+       
+       res.status(200).json({"Mensaje":"Datos Cambiados!"}).end();
+
+    }
+
+    catch(error){
+
+        res.status(500).json({"Problems":error.message}).end();
+
+    }
 
 
-module.exports={createPaciente,deletePaciente,getPacientes};
+}
+
+module.exports={createPaciente,deletePaciente,getPacientes,updatePaciente};
