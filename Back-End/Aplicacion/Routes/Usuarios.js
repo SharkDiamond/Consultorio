@@ -2,9 +2,9 @@
 const {Router}=require("express");
 const {check,validationResult }=require("express-validator");
 //EXPORTACIONES INTERNAS
-const {CreateUsers,TokenUser} = require("../Controllers/Usuario");
-const {userExist}=require("../Helpers/UsersH");
-const {valideuser}=require("../Midlewares/valideUsers");
+const {CreateUsers,TokenUser,UpdateUser,DeleteUser} = require("../Controllers/Usuario");
+const {userExist,userExistPase}=require("../Helpers/UsersH");
+const {valideuser, chekoutToken}=require("../Midlewares/valideUsers");
 
 const router=Router();
 
@@ -31,6 +31,14 @@ validateRequest],CreateUsers);
 router.post("/Users",[check("Usuario","El usuario no puede estar vacio!").not().isEmpty().isLength({min:6,max:20}).withMessage("El usuario debe tener minimo 6 caracteres y maximo 20 caracteres!"),
                       check("Password","El Password no puede estar vacio!").not().isEmpty().isLength({min:6,max:18}).withMessage("La contraseña debe tener minimo 8 caracteres!"),
                       validateRequest,valideuser],TokenUser);
+
+//DESACTIVAR USUARIO
+router.delete("/DeleteUser",[check("UserDelete").custom(userExistPase),validateRequest,chekoutToken],DeleteUser);
+
+
+//ACTUALIZAR USUARIO
+router.put("/UpdateUsers",[check("User","El nombre de usuario debe tener minimo 6 caracteres y maximo 20 caracteres!").isLength({min:6,max:20}).custom(userExistPase),validateRequest,chekoutToken],UpdateUser);
+
 
 //EXPORTANDO EL ROUTER
 module.exports=router;

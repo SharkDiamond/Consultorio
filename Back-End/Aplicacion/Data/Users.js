@@ -22,7 +22,10 @@ Apellido:{
 type:String,
 require:[true,"El Apellido es requerido"]
 
-
+},
+Active:{
+type:Boolean,
+default:true
 
 }
 

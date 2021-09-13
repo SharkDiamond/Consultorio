@@ -32,7 +32,7 @@ router.delete("/DeletePaciente",[check("Identificacion","Es necesaria la identif
 router.get("/GetPacientes",[check("campo","El campo indicado no coincide!").isIn(["Nombre","Apellido","Identificacion","FechaNacimiento","Seguro"]),
                             check("dato","El dato enviado no puede estar vacio!").not().isEmpty(),validateRequest,chekoutToken],getPacientes);
 
-
+//ACTUALIZAR PACIENTE
 router.put("/UpdatePaciente",[check("Identificacion","Es necesaria la identificacion del paciente").not().isEmpty(),validateRequest,chekoutToken],updatePaciente);
 
                             
