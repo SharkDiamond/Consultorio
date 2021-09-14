@@ -18,9 +18,9 @@ const valideuser= async(req,res,next)=>{
         
         //OBJECT USER DE MONGO DB
         const Ouser= await User.find({"Usuario":Usuario});
-        
+
         //SI NO EXISTE EL USUARIO
-        if (Ouser.length==0 || !Ouser.active) throw new Error("El usuario no existe!");
+        if (Ouser.length==0 || !Ouser[0].Active) throw new Error("El usuario no existe!");
       
         //COMPARANDO EL PASSWORD ENCRIPTADO CON EL ENVIADO POR EL USUARIO
         const passwordResult=await Encriptar.compare(Password,Ouser[0].Password);

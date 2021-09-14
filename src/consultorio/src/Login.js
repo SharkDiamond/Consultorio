@@ -1,6 +1,7 @@
 //IMPORTACIONES DE PAQUETES
 import React, { Component } from 'react';
 import {Row,Col,Form,FormControl,FormGroup,FormLabel, Button, Alert} from "react-bootstrap";
+import {toast,ToastContainer,Flip} from "react-toastify";
 import axios from "axios";
 //IMPORTACIONES PROPIAS
 import './App.css';
@@ -38,14 +39,12 @@ class Login extends Component {
     }
 
 
-  async  handleSubmit(event){
+  handleSubmit(event){
 
         event.preventDefault();
 
-try {
-
-   const response = await axios.post("http://localhost:8081/Session/Users",{"Usuario":this.state.Usuario,"Password":this.state.Password});
-    
+   axios.post("http://localhost:8081/Session/Users",{"Usuario":this.state.Usuario,"Password":this.state.Password}).then((response)=>{
+       
     sessionStorage.setItem("Paso",response.data.Enter);
 
     sessionStorage.setItem("Usuario",this.state.Usuario);
@@ -53,12 +52,16 @@ try {
     sessionStorage.setItem("Token",response.data.Keys);
 
     this.props.updateApp();
-
-} catch (error) {
+   
+}).catch((error)=>{
     
-    alert(error);
 
-}
+   let condition = error.response.data.msj!==undefined ? toast.warning(error.response.data.msj) : toast.warning(error.response.data.Problems[0]);
+
+
+});
+  
+    
 
 }
      
@@ -90,7 +93,7 @@ try {
                     </Row>
 
                 </Form>
-
+               
             
             </Col>
 

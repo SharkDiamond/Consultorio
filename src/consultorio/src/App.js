@@ -1,6 +1,7 @@
 //IMPORTACIONES DE PAQUETES
 import React from 'react';
 import { Container,Row } from 'react-bootstrap';
+import {toast,ToastContainer,Flip} from "react-toastify";
 //IMPORTACIONES PROPIAS
 import './App.css';
 import Login from "./Login";
@@ -32,7 +33,7 @@ class App extends React.Component {
 
   }
 
-
+ 
 
   render(){
 
@@ -40,7 +41,7 @@ class App extends React.Component {
       <Container fluid={true} >
         
         {this.state.pase ? <Principal/> : <Login updateApp={this.updatePase}/>}
-        
+        <ToastContainer transition={Flip}/>
       </Container>
     );
 
