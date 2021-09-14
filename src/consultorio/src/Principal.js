@@ -15,12 +15,12 @@ class Principal extends Component {
         super(props)
 
         this.state = {
-            
+      
         }
+
+      
+       
     }
-
-
-   
 
 
     componentDidMount(){
@@ -38,9 +38,12 @@ class Principal extends Component {
 
     }
 
-
-
+   
+   
     render() {
+       
+       
+
         return (
 <Container fluid={true} className="">
             <Row><Barra/></Row>
@@ -52,8 +55,6 @@ class Principal extends Component {
           <Pderecho/>
 
         </Row>
-
-        <ToastContainer transition={Flip}/>
 
         </Container>  
         )
