@@ -10,7 +10,9 @@ const CreateCita= async (req,res)=>{
 
         //GUARDANDO LA CITA
         await create.save();
-    
+
+        res.status(200).json({Exito:"Se creo la cita exitosamente"}).end();
+
     } catch (error) {
         
         //RESPONDIENDO CON EL ERROR
@@ -20,5 +22,18 @@ const CreateCita= async (req,res)=>{
    
 }
 
+const UpdateCita=async (req,res)=>{
 
-module.exports={CreateCita};
+    try {
+        
+        //const actualiza=await Cita.findOneAndUpdate({},{});
+
+
+    } catch (error) {
+        
+    }
+
+}
+
+
+module.exports={CreateCita,UpdateCita};

@@ -38,6 +38,9 @@ class Server{
       //RUTA PARA PACIENTES
       this.app.use("/Pacientes",require("../Routes/Pacientes"));  
 
+      //RUTA PARA CITAS
+      this.app.use("/Citas",require("../Routes/Citas"));
+
       
     } 
 

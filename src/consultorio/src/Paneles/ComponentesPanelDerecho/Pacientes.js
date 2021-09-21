@@ -9,9 +9,21 @@ class Pacientes extends Component {
         super(props)
 
         this.state = {
-            
+           Paciente:null
         }
     }
+
+    cambiosInput(e){
+
+      this.setState({
+
+        [e.target.name]:e.target.value
+
+      });
+
+
+    }
+
 
 
 
@@ -70,7 +82,7 @@ class Pacientes extends Component {
                     
                     <Col lg={3} className="pt-1">
 
-                      <input placeholder="Buscar Paciente" className="rounded"  /> 
+                      <input placeholder="Buscar Paciente" className="rounded"  onChange={this.cambiosInput} name="Paciente"  /> 
                      
                     </Col>
                

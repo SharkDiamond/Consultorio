@@ -1,25 +1,22 @@
-const mongoose,{Schema,model}=require("mongoose");
-const Paciente=require("../Data/PacientesDb");
+const {Schema,model}=require("mongoose");
 
+const Citas= Schema({
 
-const Citas=new Schema({
-
-Enfermizo:{
-Type:Paciente.Identificacion,
-require:[true,"El paciente de la cita es requerido!"]
+IdentificacionEnfermizo:{
+type:String,
+require:[true,"La identificacion del paciente es necesario!"]
 },
 Sintoma:{
-Type:String,
+type:String,
 require:[true,"El Sintoma que presenta es necesario!"]
 },
 Fecha:{
-Type:Date,
+type:Date,
 require:[true,"La fecha de la cita es requerida"]
-
 }
 
 
 });
 
 
-module.exports=model=("Cita",Citas);
+module.exports=model("Cita",Citas);
