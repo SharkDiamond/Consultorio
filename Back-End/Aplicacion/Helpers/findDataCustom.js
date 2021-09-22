@@ -3,19 +3,16 @@ const Cita=require("../Data/CitasDb");
 
 
 const findCitaForId= async(id)=>{
+    
+    let Cit=null;
 
-    try {
-        
-        const Cit=await Cita.findById(id);
-
-        if(Cit==undefined) throw new Error("La Cita No Existe!");
-
-    } catch (error) {
-        
-        return  error.message;
-      
-    }
-
+    try { Cit=await Cita.findById(id);}
+    
+    catch (error) { console.log(error.message);}
+    
+    if(Cit==undefined || Cit==null) throw new Error("La Cita No Existe!");
+    
+   
 }
 
 

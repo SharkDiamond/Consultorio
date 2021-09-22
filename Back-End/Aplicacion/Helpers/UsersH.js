@@ -1,38 +1,27 @@
 const User=require("../Data/Users");
 
 const userExist=async(user)=>{
+    
+    let searhUser=null;
+    
+    try{ searhUser=await User.find({Usuario:user}); }
+    
+    catch(error) { console.log(error.message);}
 
-    try{
-        
-        const searhUser=await User.find({Usuario:user});
-
-        if(searhUser.length>0)  throw new Error("El Nombre de Usuario ya existe!");
-
-    }catch(error) {
-        
-        throw new Error(error);
-        
-
-    }
+    if(searhUser.length>0)  throw new Error("El Nombre de Usuario ya existe!");
 
 }
 
-
 const userExistPase=async(user)=>{
+    
+    let searhUser=null;
+    
+    try{searhUser=await User.find({Usuario:user});}
+    
+    catch(error){console.log(error.message);}
 
-    try{
-       
-        const searhUser=await User.find({Usuario:user});
-      
-        if(searhUser.length==0)  throw new Error("El usuario no existe!");
-
-    }catch(error) {
-        
-        throw new Error(error);
-        
-
-    }
-
+    if(searhUser.length==0)  throw new Error("El usuario no existe!");
+  
 }
 
 

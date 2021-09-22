@@ -19,6 +19,9 @@ router.put("/UpdateCita",[check("id","El id no es correcto!").isMongoId().custom
 
 
 //ELIMINAR CITA
+//router.delete("/DeleteCita");
+
+
 
 //OBTENER CITAS
 
