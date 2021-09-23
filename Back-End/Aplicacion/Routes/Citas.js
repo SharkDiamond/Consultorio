@@ -2,7 +2,7 @@
 const {Router}= require("express");
 const {check}= require("express-validator");
 //IMPORTACIONES INTERNAS
-const {CreateCita,UpdateCita}=require("../Controllers/Citas");
+const {CreateCita,UpdateCita,DeleteCita,GetCitas}=require("../Controllers/Citas");
 const {chekoutToken}=require("../Midlewares/valideUsers");
 const {validateRequest}=require("../Helpers/validateRequest");
 const {findCitaForId}=require("../Helpers/findDataCustom");
@@ -19,11 +19,15 @@ router.put("/UpdateCita",[check("id","El id no es correcto!").isMongoId().custom
 
 
 //ELIMINAR CITA
-//router.delete("/DeleteCita");
+router.delete("/DeleteCita",[check("id","El id no es correcto!").isMongoId().custom(findCitaForId),validateRequest,chekoutToken],DeleteCita);
 
 
 
 //OBTENER CITAS
+
+router.get("/GetCitas",chekoutToken,GetCitas);
+
+
 
 module.exports=router;
 

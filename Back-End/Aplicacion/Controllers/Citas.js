@@ -57,12 +57,66 @@ const UpdateCita=async (req,res)=>{
 //ELIMINAR CITA
 const DeleteCita=async (req,res)=>{
 
+    try {
+        
+       const I=await Cita.findByIdAndDelete(req.body.id);
+        
+       console.log(I);
+
+       res.status(200).json({respuesta:"Cita Eliminada!"}).end();
+
+    } catch (error) {
+        
+        res.status(500).json({"Problems":"Ocurrio un problema con el servidor "}+error.message).end();
+
+    }
 
 }
 
 //OBTENER CITAS
 const GetCitas=async (req,res)=>{
 
+    try {
+        //HACIENDO LA CONSULTA DE TODAS LAS CITAS CON LA INFORMACION DE LOS PACIENTES INCLUIDA
+        const dataGeneral=await Cita.aggregate([
+
+            {
+                $lookup:{
+
+                    from:"pacientes",
+                    localField:"IdentificacionEnfermizo",
+                    foreignField:"Identificacion",
+                    as:"PacienteData"
+
+                    
+                }
+
+            },
+            {
+                $unwind:"$PacienteData"
+            
+            
+            }
+
+
+
+
+        ]);
+
+        //RECORRIENDO Y ORDENANDO DICHA INFORMACION COLOCANDO SOLO LO MAS IMPORTANTE
+        const data=dataGeneral.map((element,index)=>{
+       
+            return {"Paciente":element["PacienteData"].Nombre+" "+element["PacienteData"].Apellido,"Sintomas":element.Sintoma,"Fecha":element.Fecha}
+
+});
+       //RESPONDIENDO CON LA INFORMACION ORGANIZADA
+       res.status(200).json(data).end();
+
+    } catch (error) {
+        //EN CASO DE QUE HAYA UN ERROR
+        res.status(500).json({"Problems":"Ocurrio un problema con el servidor "}+error.message).end();
+    }
+
 }
 
-module.exports={CreateCita,UpdateCita};
+module.exports={CreateCita,UpdateCita,DeleteCita,GetCitas};
