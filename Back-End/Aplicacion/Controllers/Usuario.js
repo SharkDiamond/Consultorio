@@ -17,7 +17,7 @@ const CreateUsers= async (req,res)=>{
 
         await newusuario.save();
 
-        res.status(201).json({msj:"Usuario "+req.body.Usuario+" Creado!"}).end();
+        res.status(203).json({msj:"Usuario "+req.body.Usuario+" Creado!"}).end();
     
     } catch (error) {
         

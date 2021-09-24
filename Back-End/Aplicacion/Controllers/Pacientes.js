@@ -9,7 +9,7 @@ const createPaciente=async(req,res)=>{
 
         await nPaciente.save();
 
-        res.status(201).json({"result":"Paciente "+req.body.Nombre+" Creado!"}).end();
+        res.status(203).json({"result":"Paciente "+req.body.Nombre+" Creado!"}).end();
 
     } catch (error) {
         

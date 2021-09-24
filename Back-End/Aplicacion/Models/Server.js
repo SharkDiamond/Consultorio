@@ -41,7 +41,9 @@ class Server{
       //RUTA PARA CITAS
       this.app.use("/Citas",require("../Routes/Citas"));
 
-      
+      //RUTA PARA COMPROMISOS
+      this.app.use("/Compromisos",require("../Routes/Compromisos"));
+
     } 
 
     Escuchar(){

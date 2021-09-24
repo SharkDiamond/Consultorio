@@ -1,11 +1,11 @@
 const {Schema,model} =require("mongoose");
-const Users=require("../Data/Users");
+
 
 
 const Compromisos=new Schema({
 
-    Usuario:{
-        Type:Users.Usuario,
+    UsuarioPerteneciente:{
+        type:String,
         require:[true,"El usuario del cual es el compromiso es necesario"]
     },
     Nombre:{
@@ -17,8 +17,6 @@ const Compromisos=new Schema({
         require:[true,"La fecha es necesaria"]
 
     }
-
-
 
 });
 

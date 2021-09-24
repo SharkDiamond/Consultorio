@@ -11,7 +11,7 @@ const CreateCita= async (req,res)=>{
         //GUARDANDO LA CITA
         await create.save();
 
-        res.status(200).json({Exito:"Se creo la cita exitosamente"}).end();
+        res.status(203).json({Exito:"Se creo la cita exitosamente"}).end();
 
     } catch (error) {
         
@@ -94,8 +94,7 @@ const GetCitas=async (req,res)=>{
             },
             {
                 $unwind:"$PacienteData"
-            
-            
+
             }
 
 
