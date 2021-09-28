@@ -1,6 +1,6 @@
 //EXPORTACIONES DE PAQUETES EXTERNOS
 const {Router}=require("express");
-const {check,validationResult }=require("express-validator");
+const {check,validationResult}=require("express-validator");
 //EXPORTACIONES INTERNAS
 const {CreateUsers,TokenUser,UpdateUser,DeleteUser} = require("../Controllers/Usuario");
 const {userExist,userExistPase}=require("../Helpers/UsersH");

@@ -5,9 +5,9 @@ const compromisoCreate=async(req,res)=>{
 
     try {
         
-        const Compromiso=new Compromiso(req.body);
+        const Item=new Compromiso(req.body);
 
-        Compromiso.save();
+        await Item.save();
 
         res.status(201).json("Compromiso Creado!").end();
 
@@ -15,10 +15,7 @@ const compromisoCreate=async(req,res)=>{
         
         res.status(500).json({Problems:"Ocurrio un problema en el servidor "+error.message}).end();
 
-
     }
-
-
 
 }
 
@@ -27,7 +24,7 @@ const compromisoDelete=async(req,res)=>{
 
 try {
     
-  await Compromiso.findByIdAndRemove(req.body.id);
+  await Compromiso.findByIdAndRemove(req.body.idCompromiso);
 
   res.status(202).json("Compromiso Removido").end();
 

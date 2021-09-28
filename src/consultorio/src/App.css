@@ -91,13 +91,21 @@
     background-color: rgb(216, 227, 231);
 }
 
+.colorBotonesAgregar{
+
+    background-color: rgb(216, 227, 231);
+
+
+}
+
+
 /* Clase para el div de los compromisos del panel izquierdo */
 .tamanoListaCompromisos{
 
     background-color: rgb(216, 227, 231);
 
     display: block;
-    height: 145px;
+    height: 130px;
     overflow-y: scroll;
     scroll-behavior: smooth;
 
