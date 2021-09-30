@@ -2,14 +2,14 @@
 import React, { Component } from 'react'
 import { Container,Row } from 'react-bootstrap';
 import {toast,ToastContainer,Flip} from "react-toastify";
-
+import "react-toastify/dist/ReactToastify.css";
 
 //IMPORTACIONES PROPIAS
 import Barra from './Barra';
 import Pizquierdo from './Paneles/Pizquierdo';
 import Pderecho from './Paneles/Pderecho';
 
-import "react-toastify/dist/ReactToastify.css";
+
 class Principal extends Component {
     constructor(props) {
         super(props)

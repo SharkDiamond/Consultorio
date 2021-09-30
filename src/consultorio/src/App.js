@@ -13,24 +13,13 @@ class App extends React.Component {
 
     super(props);
 
-    this.state={
-
-      pase:sessionStorage.getItem("Paso")
-
-    }
-
+    this.state={pase:sessionStorage.getItem("Paso")}
 
   }
 
     updatePase=()=>{
-
-      this.setState({
-
-          pase:localStorage.getItem("Paso")
-
-      });
-
-
+      let objeto={pase:sessionStorage.getItem("Paso")};
+      this.setState(objeto);
   }
 
  
@@ -41,6 +30,7 @@ class App extends React.Component {
       <Container fluid={true} >
         
         {this.state.pase ? <Principal/> : <Login updateApp={this.updatePase}/>}
+        
         <ToastContainer transition={Flip}/>
       </Container>
     );
