@@ -25,14 +25,14 @@ class FormAddElementsLeft extends Component {
     }
 
 
-    handleSubmit(){
+   async handleSubmit(e){
 
-       
+       e.preventDefault();
+
+       const Peticion=await axios.post("localhost:8081/Citas/CreateCita",[]);
+
 
     }
-
-
-
 
     render() {
         return (
@@ -40,16 +40,16 @@ class FormAddElementsLeft extends Component {
  <Form onSubmit={this.handleSubmit}>
 
 <Row className="justify-content-center">
-    <Col xl={6}>
+    <Col xl={11}>
         <FormGroup>
 
-            <FormControl placeholder={"Agregar "+this.props.type} name="dato" value={this.state.dato} onChange={this.handleChange} type="text"/>
-            <br/>
-
+            <FormControl placeholder={"Agregar "+this.props.type} name="dato" value={this.state.dato} className="mb-3" onChange={this.handleChange} type="text"/>
+            
+           {this.props.type=="Citas" ? <FormControl className="mb-3 "  placeholder={"Identificacion Paciente"} name="IdentificacionEnfermizo" onChange={this.handleChange} type="text" /> : ""} 
+          
             <FormControl placeholder="Fecha" name="fecha" value={this.state.fecha} onChange={this.handleChange} type="Date" />
-            <br/>
 
-            <Button type="submit" variant="primary" >Create</Button>
+            <Button type="submit" variant="primary" className="mt-3">Create</Button>
 
         </FormGroup>
     </Col>

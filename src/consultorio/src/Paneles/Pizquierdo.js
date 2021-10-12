@@ -18,7 +18,7 @@ class Pizquierdo extends Component {
     }
 
     changeForm=(param)=>{
-        
+            
     this.state[param.target.id] ? this.setState({[param.target.id]:false}) : this.setState({[param.target.id]:true});
 
    }
@@ -72,7 +72,7 @@ class Pizquierdo extends Component {
                     
                     <Col className="tamanoListaCitasMedicas  rounded-3 p-3">
                     
-                     {this.state.ShowFormCitas ? <FormAddElementsLeft type="Citas" /> : listCitas}   
+                     {this.state.ShowFormCitas ? <FormAddElementsLeft type="Citas" /> : listCitas }   
                         
                         </Col>
                     
@@ -84,7 +84,7 @@ class Pizquierdo extends Component {
 
                     <Col lg={12}className="tamanoListaCompromisos rounded-3 p-3"> 
                     
-                    {this.state.FormCompromisos ? <FormAddElementsLeft type="Compromisos"/>: listCompromisos}
+                    { this.state.ShowFormCompromisos ? <FormAddElementsLeft type="Compromisos"/> : listCitas } 
                
                     </Col>
 
