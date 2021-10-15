@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Navbar,Container,Nav,Row,Col ,FormControl,Button,Form,NavDropdown } from 'react-bootstrap';
 
 import Graficas from "./Iconos/Graficas.png";
@@ -6,70 +6,51 @@ import Paciente from "./Iconos/Paciente.png";
 import Reporte from "./Iconos/Reporte.png";
 import './App.css';
 
-class Barra extends Component {
+
+function Barra(props) {
     
-    constructor(props) {
-
-        super(props);
-
-
-    }
-
-    render() {
-        if (!this.props.noMostrar){ return (
-            <Navbar className="barra pt-3 fixed-top border-bottom border-dark border-2"  expand="lg" >
+    return(
+<div>
+{ !props.noMostrar ? <Navbar className="barra pt-3 fixed-top border-bottom border-dark border-2"  expand="lg" >
                        
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav" className="">
-                            <Nav className="me-auto" >
-                            
-                               <Navbar.Brand href="#link"  onClick={(e) => this.props.update("Graficas")}><img src={Graficas} width="60px" height="60px"  className="img-fluid " /> <span className="h3 fw-bold" style={{color:'#126e82'}} >Graficas</span></Navbar.Brand> 
-                                <Navbar.Brand href="#link"  onClick={(e) => this.props.update("Pacientes")}><img src={Paciente} width="60px" height="60px" className="img-fluid "/><span className="h3 fw-bold" style={{color:'#126e82'}}> Pacientes</span></Navbar.Brand>
-                                <Navbar.Brand href="#link" onClick={(e) => this.props.update("Reportes")} ><img src={Reporte} width="60px" height="60px" className="img-fluid "/><span className="h3 fw-bold" style={{color:'#126e82'}} > Reportes</span></Navbar.Brand>
-                                
-                              
+<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                            </Nav>
-
-                            <Form className="d-flex me-2">
-      <FormControl
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-      />
-      <Button variant="outline-dark">Search</Button>
-    </Form>
-
-    <NavDropdown  title={sessionStorage.getItem("Usuario")} id="collasible-nav-dropdown" className="colorNombreUsuario me-5 fw-bold" >
+    <Navbar.Collapse id="responsive-navbar-nav" className="">
+        <Nav className="me-auto" >
         
-        <NavDropdown.Item href="#action/3.1">Cambiar Datos</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Cerrar Sesion</NavDropdown.Item>
-        
-      </NavDropdown>
-                        
-                        </Navbar.Collapse >
-                        
-                       
-                
+           <Navbar.Brand href="#link"  onClick={(e) => props.update("Graficas")}><img src={Graficas} width="60px" height="60px"  className="img-fluid " /> <span className="h3 fw-bold" style={{color:'#126e82'}} >Graficas</span></Navbar.Brand> 
+            <Navbar.Brand href="#link"  onClick={(e) => props.update("Pacientes")}><img src={Paciente} width="60px" height="60px" className="img-fluid "/><span className="h3 fw-bold" style={{color:'#126e82'}}> Pacientes</span></Navbar.Brand>
+            <Navbar.Brand href="#link" onClick={(e) => props.update("Reportes")} ><img src={Reporte} width="60px" height="60px" className="img-fluid "/><span className="h3 fw-bold" style={{color:'#126e82'}} > Reportes</span></Navbar.Brand>
             
-            </Navbar>
-        );
-}
-       
+        </Nav>
 
+        <Form className="d-flex me-2">
+<FormControl
+type="search"
+placeholder="Search"
+className="me-2"
+aria-label="Search"
+/>
+<Button variant="outline-dark">Search</Button>
+</Form>
 
-        if (this.props.noMostrar) {
+<NavDropdown  title={sessionStorage.getItem("Usuario")} id="collasible-nav-dropdown" className="colorNombreUsuario me-5 fw-bold" >
+
+<NavDropdown.Item href="#action/3.1">Cambiar Datos</NavDropdown.Item>
+<NavDropdown.Item href="#action/3.2">Cerrar Sesion</NavDropdown.Item>
+
+</NavDropdown>
     
-            return (
-                <div></div> 
-        
-            );
-        
-        }
-        
+    
+</Navbar.Collapse ></Navbar> :  <div></div> }
 
-    }
+</div>
+
+    );
+
+
 }
 
-export default Barra
+
+
+export default Barra;

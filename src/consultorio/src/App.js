@@ -1,5 +1,5 @@
 //IMPORTACIONES DE PAQUETES
-import React from 'react';
+import React,{useState} from 'react';
 import { Container,Row } from 'react-bootstrap';
 import {toast,ToastContainer,Flip} from "react-toastify";
 //IMPORTACIONES PROPIAS
@@ -7,37 +7,33 @@ import './App.css';
 import Login from "./Login";
 import Principal from './Principal';
 
-class App extends React.Component {
+
+function App(props) {
   
-  constructor(props){
+const [pase,setPase]=useState(false);
 
-    super(props);
+const updatePase=()=>{
+  let objeto={pase:sessionStorage.getItem("Paso")};
+  setPase(objeto);
+}
 
-    this.state={pase:sessionStorage.getItem("Paso")}
 
-  }
+return(
 
-    updatePase=()=>{
-      let objeto={pase:sessionStorage.getItem("Paso")};
-      this.setState(objeto);
-  }
-
- 
-
-  render(){
-
-    return (
-      <Container fluid={true} >
+  <Container fluid={true} >
         
-        {this.state.pase ? <Principal/> : <Login updateApp={this.updatePase}/>}
+        {pase ? <Principal/> : <Login updateApp={updatePase}/>}
         
         <ToastContainer transition={Flip}/>
       </Container>
-    );
 
 
-  }
- 
+
+);
+
+
+
 }
+
 
 export default App;

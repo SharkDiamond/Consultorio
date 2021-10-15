@@ -66,7 +66,7 @@ class Graficas extends Component {
 
                 <Col lg={12}  className="bg-white mb-2 border rounded">
                     
-                    <Line  height={Tamaños[window.screen.width]}   data={data} options={options}/>
+                    <Line  height={100}   data={data} options={options}/>
                     
                     
                 </Col>
@@ -75,7 +75,7 @@ class Graficas extends Component {
                 <Col lg={12} className="bg-white border rounded">
                     
                         
-                    <Bar  height={Tamaños[window.screen.width]} data={data} options={options}/>
+                    <Bar  height={100} data={data} options={options}/>
 
                     
                     
