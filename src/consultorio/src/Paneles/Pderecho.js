@@ -1,65 +1,26 @@
-import React, { Component } from 'react';
-import {Row,Col} from "react-bootstrap";
+import React, { Component,useState } from 'react';
+import {Col} from "react-bootstrap";
 import Pacientes from './ComponentesPanelDerecho/Pacientes';
 import Graficas from './ComponentesPanelDerecho/Graficas';
-
 import Barra from '../Barra';
 
-class Pderecho extends Component {
+export default function Pderecho(props) {
     
-    constructor(props) {
-        super(props)
+    //ESTADO
+    const [muestra,setMuestra]=useState("Graficas");
+    //PARA ACTUALIZAR EL ESTADO DESDE OTRO COMPONENTE
+    const  ShowPanelLeft=(item)=>{setMuestra(item);}
 
-        this.state = {
-            Muestra:"Graficas"
-        }
-
-
-        this.ShowPanelLeft=this.ShowPanelLeft.bind(this);
-
-    }
-
-   
-    
-    ShowPanelLeft(item){
-
-        this.setState({
-
-            Muestra:item
-
-        });
-
-    }
-
-
-    componentDidUpdate(prevProps,prevState){
-
-   
-
-}
-
-    render() {
-
-        if (!this.props.noMostrar) {
+    if (!props.noMostrar) {
            
         return (
             <Col  lg={7} xs={12} md={7} xl={7} className="tamanoColorPaneles  ">
-            
-              {this.state.Muestra=="Graficas"  && <Graficas/>}  
-
-
-              {this.state.Muestra=="Pacientes" && <Pacientes/>}  
-            <Barra noMostrar={false} update={this.ShowPanelLeft}/>
-            
+              {muestra=="Graficas"  && <Graficas/>}  
+              {muestra=="Pacientes" && <Pacientes/>}  
+              <Barra noMostrar={false} update={ShowPanelLeft}/>
             </Col>    
-
-
         );
+ 
         }
 
-
-
     }
-}
-
-export default Pderecho
