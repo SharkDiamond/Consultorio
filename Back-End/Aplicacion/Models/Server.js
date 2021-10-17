@@ -48,7 +48,7 @@ class Server{
 
     Escuchar(){
         //PUERTO DE ESCUCHA
-       this.app.listen(8081);
+       this.app.listen(8082);
 
     }
 

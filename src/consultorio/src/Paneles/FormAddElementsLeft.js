@@ -1,71 +1,55 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Form,Row,Col,FormGroup,FormControl,Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { toast } from 'react-toastify';
-class FormAddElementsLeft extends Component {
+import { Form,Field,Formik,ErrorMessage} from 'formik';
+
+export default function FormAddElementsLeft(props) {
     
-    
-    constructor(props) {
-        
-        super(props);
+    return(
+        <Formik  className=""  initialValues={{ dato:"",fecha:"",hora:"",IdentificacionEnfermizo:""}}
+            validate={(values)=>{
 
-        this.state={
+                const errors={};
+               
+                if (!values.dato || !values.fecha || !values.hora || !values.IdentificacionEnfermizo) {
+            
+                    let data={"dato":!values.dato,"fecha":!values.fecha,"hora":!values.hora,"IdentificacionEnfermizo":!values.IdentificacionEnfermizo}
+                 
+                    let errores= Object.keys(data).filter(element=>data[element]==true);
+                   
+                    errores.forEach(element=>errors[element]="El campo es requerido!")                
+                   
+                }
+                console.log(errors);
+                return errors;
+            }}
 
-            dato:"",
-            fecha:"",
-            hora:"",
-            IdentificacionEnfermizo:""
+    onSubmit={async(values)=>{
 
-        };
-
-
-        this.bind=this.handleChange.bind(this);
-
-        this.bind=this.handleSubmit.bind(this);
-
-    }
-
-
-    handleChange =(e)=>{
-    this.setState({
-
-
-        [e.target.name]:e.target.value
-
-    })
-
-        console.log(this.state.dato);
-
-    }
-
-
-    handleSubmit = async (e)=>{
-
-       e.preventDefault();
-
+         
         try {
 
-            if (this.props.type=="Citas") {
-                 
-                let Peticion=await axios.post("http://localhost:8081/Citas/CreateCita",{
-        "IdentificacionEnfermizo":this.state.IdentificacionEnfermizo,
-        "Sintoma":this.state.dato,
-        "Fecha":this.state.fecha
-       },{ headers: {
-        'token': sessionStorage.getItem("Token")
-                }});
+            if (props.type=="Citas") {
+              
+                let Peticion=await axios.post("http://localhost:8082/Citas/CreateCita",{
+                                                "IdentificacionEnfermizo":values.IdentificacionEnfermizo,
+                                                "Sintoma":values.dato,
+                                                "Fecha":values.fecha
+                                                },{ headers: {
+                                                        'token': sessionStorage.getItem("Token")
+                                                    }});
 
-             
-      toast.success(Peticion.data.Exito);
+                toast.success(Peticion.data.Exito);
             }
             
-            else if(this.props.type=="Compromisos") {
+            else if(props.type=="Compromisos") {
                 
 
-                let Peticion=await axios.post("http://localhost:8081/Compromisos/CreateCompromiso",{
+                let Peticion=await axios.post("http://localhost:8082/Compromisos/CreateCompromiso",{
                     "UsuarioPerteneciente":sessionStorage.getItem("Usuario"),
-                    "Nombre":this.state.dato,
-                    "Fecha":this.state.fecha
+                    "Nombre":values.dato,
+                    "Fecha":values.fecha
                     },{ headers: {
                             'token': sessionStorage.getItem("Token")
                         }});
@@ -85,34 +69,32 @@ class FormAddElementsLeft extends Component {
              
         }
 
-    }
+    }}>
 
-    render() {
-        return (
-            <div>
- <Form onSubmit={this.handleSubmit}>
+    {()=>(
+       
+        <Form>
 
-<Row className="justify-content-center">
-    <Col xl={11}>
-        <FormGroup>
+        <Field  name="dato" className="form-control mt-3" type="text" placeholder={"Agregar "+props.type} required/> 
+        <ErrorMessage className="text-danger" name="dato" component="div" />
+       {props.type=="Citas" ? <Field className="mt-3 form-control" placeholder="Identificacion Paciente" name="IdentificacionEnfermizo" type="text" required/> : ""} 
+       {props.type=="Citas" ? <ErrorMessage className="text-danger" name="IdentificacionEnfermizo"  component="div" /> : ""}
 
-            <FormControl placeholder={"Agregar "+this.props.type} name="dato" value={this.state.dato} className="mb-3" onChange={this.handleChange} type="text"/>
-            
-           {this.props.type=="Citas" ? <FormControl className="mb-3 "  placeholder={"Identificacion Paciente"} name="IdentificacionEnfermizo"  value={this.state.IdentificacionEnfermizo}  onChange={this.handleChange} type="text" /> : ""} 
-          
-            <FormControl placeholder="Fecha" name="fecha" value={this.state.fecha} onChange={this.handleChange} type="date" />
-            <input className="form-control mt-3" type="time" name="hora" value={this.state.hora} onChange={this.handleChange}/>
-            <Button type="submit" variant="primary" className="mt-3">Create</Button>
+        
 
-        </FormGroup>
-    </Col>
-</Row>
+      <Field className="form-control mt-3" placeholder="Fecha" name="fecha"  type="date" required />
+      <ErrorMessage className="text-danger" name="fecha"  component="div" />
+      <Field className="form-control mt-3" type="time" name="hora" required />
+      <ErrorMessage className="text-danger" name="hora" component="div" />
+      <Button type="submit" variant="primary" className="mt-3">Create</Button>
 
-</Form>
+        </Form>
 
-            </div>
-        )
-    }
+    )}
+
+
+</Formik>
+
+);
+  
 }
-
-export default FormAddElementsLeft;

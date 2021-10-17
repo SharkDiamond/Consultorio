@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { Col,Row,Button } from 'react-bootstrap';
 import FormAddElementsLeft from './FormAddElementsLeft';
 
-
 export default function Pizquierdo(props) {
     //ESTADO
     const [ShowFormCitas,setShowFormCitas]=useState(false);
@@ -73,6 +72,5 @@ export default function Pizquierdo(props) {
 
            </Col>
    );
-
 
 }
