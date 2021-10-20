@@ -1,11 +1,32 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect, useRef} from 'react';
 import { Col,Row,Button } from 'react-bootstrap';
+import axios from 'axios';
 import FormAddElementsLeft from './FormAddElementsLeft';
+
 
 export default function Pizquierdo(props) {
     //ESTADO
     const [ShowFormCitas,setShowFormCitas]=useState(false);
     const [ShowFormCompromisos,setShowFormCompromisos]=useState(false);
+    const [Citas,setCitas]=useState([]);
+    const [Compromisos,setCompromisos]=useState([]);
+   
+//tesdt
+    useEffect(async()=>{
+
+        let valores=await axios.get("http://localhost:8082/Citas/GetCitas", {
+          headers: {
+            'token': sessionStorage.getItem("Token")
+          }
+        });
+       
+        setCitas(valores.data);
+
+        console.log(valores.data);
+      },[]);
+    
+
+    
     //DATA FALSE COMPROMISOS
     const listCompromisos= <ol>
     <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
@@ -50,9 +71,14 @@ export default function Pizquierdo(props) {
                     
                     </Col>
                                   
-                    <Col className="tamanoListaCitasMedicas  rounded-3 p-3">
+                    <Col className="tamanoListaCitasMedicas  rounded-3 p-3 ">
                     
-                     { ShowFormCitas ? <FormAddElementsLeft type="Citas" /> : listCitas }   
+                     { ShowFormCitas ? <FormAddElementsLeft type="Citas" /> :<ol className="">{
+                       
+  Citas.map((element)=><li className=" text-dark fw-bold text-center"  >{element.Paciente}- <span style={{color:"#126e82"}}>{element.Sintomas} - </span> <Button variant="outline-dark">C</Button>  <hr  style={{height:'4px',color:"#142d34",width: "95%" }} /></li>)
+    
+                       } </ol>}
+                 
                         
                         </Col>
                     

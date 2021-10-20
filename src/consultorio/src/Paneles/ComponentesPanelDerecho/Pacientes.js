@@ -5,7 +5,7 @@ import {Bar} from "react-chartjs-2";
 
 export default function Pacientes(props) {
   
-  const [Paciente,setPaciente]=(null);
+  const [Paciente,setPaciente]=useState(null);
 
   const data = {
     labels: ['Reportes', 'Citas', 'Emergencias', 'Pendientes'],

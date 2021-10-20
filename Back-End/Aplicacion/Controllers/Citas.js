@@ -102,12 +102,16 @@ const GetCitas=async (req,res)=>{
 
         ]);
 
+        console.log(dataGeneral);
         //RECORRIENDO Y ORDENANDO DICHA INFORMACION COLOCANDO SOLO LO MAS IMPORTANTE
         const data=dataGeneral.map((element,index)=>{
        
             return {"Paciente":element["PacienteData"].Nombre+" "+element["PacienteData"].Apellido,"Sintomas":element.Sintoma,"Fecha":element.Fecha}
 
 });
+
+        
+
        //RESPONDIENDO CON LA INFORMACION ORGANIZADA
        res.status(200).json(data).end();
 
