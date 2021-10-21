@@ -43,10 +43,9 @@ const compromisoGet=async(req,res)=>{
     try {
         
       const data=await Compromiso.find({UsuarioPerteneciente:req.body.user});
-            
-      const {user,nombreCompromiso,fechaCompromiso}=data;
+           
     
-      res.status(200).json({nombreCompromiso,fechaCompromiso}).end();
+      res.status(200).json(data).end();
 
 
     } catch (error) {

@@ -14,18 +14,73 @@ export default function Pizquierdo(props) {
 //tesdt
     useEffect(async()=>{
 
-        let valores=await axios.get("http://localhost:8082/Citas/GetCitas", {
+      try {
+              
+        let valoresCitas=await axios.get("http://localhost:8082/Citas/GetCitas", {
           headers: {
             'token': sessionStorage.getItem("Token")
           }
         });
-       
-        setCitas(valores.data);
 
-        console.log(valores.data);
+        let valoresCompromisos=await axios.post("http://localhost:8082/Compromisos/GetCompromisos",{"user":sessionStorage.getItem("Usuario")},{
+          headers: {
+            'token': sessionStorage.getItem("Token")
+          }
+        });
+      
+
+  setCitas(valoresCitas.data);
+
+  setCompromisos(valoresCompromisos.data);
+
+      
+      } catch (error) {
+
+
+          console.log(error.response.data);
+      }
+
+
+
       },[]);
     
 
+    //METODO PARA ACTUALIZAR EL ESTADO DE CAMBIAR DE LA LISTA DE CITAS AL FORMULARIO DE CREACION DE CITAS Y HACER LAS PETICIONES DE LAS CITAS
+    const updateAndChange=async(data)=>{
+
+
+      if (data=="Citas"){
+
+      let valoresCitas=await axios.get(`http://localhost:8082/${data}/Get${data}`, {
+        headers: {
+          'token': sessionStorage.getItem("Token")
+        }
+      });
+     
+        setShowFormCitas(!ShowFormCitas); 
+
+
+        setCitas(valoresCitas.data);
+
+      } 
+
+
+      else if(data=="Compromisos"){
+
+        let valoresCompromisos=await axios.post(`http://localhost:8082/${data}/Get${data}`,{"user":sessionStorage.getItem("Usuario")},{
+          headers: {
+            'token': sessionStorage.getItem("Token")
+          }
+        });
+      
+
+        setShowFormCompromisos(!ShowFormCompromisos);
+        setCompromisos(valoresCompromisos.data);
+      }
+
+
+
+    }
     
     //DATA FALSE COMPROMISOS
     const listCompromisos= <ol>
@@ -40,25 +95,7 @@ export default function Pizquierdo(props) {
     <li className="h5 text-dark fw-bold">Reunion Junta Directiva - <span style={{color:"#126e82"}}>8 pm</span></li>
 
     </ol>;
-    //DATA FALSE CITAS
-    const listCitas=<ol>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    <li className="h5 text-dark fw-bold">Gabriel Arispe - <span style={{color:"#126e82"}}>Dolor De Cabeza - </span><Button variant="outline-dark">C</Button></li>
-    <hr  style={{height:'5px',color:"#142d34"}}/>
-    </ol>;
+   
 
    return(
         <Col lg="auto" xs={12} md={4} xl={4} className="tamanoColorPaneles mb-2">
@@ -67,7 +104,7 @@ export default function Pizquierdo(props) {
                     
                     <Col lg={12}>
                     
-                    <h3 className="Titulos ">Citas Medicas <Button id="ShowFormCitas" className="rounded-circle bg-white text-dark fw-bold border-white" onClick={e=>setShowFormCitas(!ShowFormCitas)}>+</Button></h3> 
+                    <h3 className="Titulos ">Citas Medicas <Button id="ShowFormCitas" name="Citas" className="rounded-circle bg-white text-dark fw-bold border-white" onClick={e=>updateAndChange(e.target.name)}>+</Button></h3> 
                     
                     </Col>
                                   
@@ -75,7 +112,7 @@ export default function Pizquierdo(props) {
                     
                      { ShowFormCitas ? <FormAddElementsLeft type="Citas" /> :<ol className="">{
                        
-  Citas.map((element)=><li className=" text-dark fw-bold text-center"  >{element.Paciente}- <span style={{color:"#126e82"}}>{element.Sintomas} - </span> <Button variant="outline-dark">C</Button>  <hr  style={{height:'4px',color:"#142d34",width: "95%" }} /></li>)
+  Citas.map((element)=><li className=" text-dark fw-bold text-center"  >{element.Paciente}- <span style={{color:"#126e82"}}>{element.Sintomas} - </span> <Button variant="outline-dark">C</Button>  <hr  style={{height:'4px',color:"#142d34",width: "97%" }} /></li>)
     
                        } </ol>}
                  
@@ -84,13 +121,13 @@ export default function Pizquierdo(props) {
                     
                     <Col lg={12} className="pt-1">
                     
-                    <h3 className="Titulos">Compromisos <Button id="ShowFormCompromisos" className="rounded-pill bg-white text-dark fw-bold border-white" onClick={e=>setShowFormCompromisos(!ShowFormCompromisos)}>+</Button></h3>
+                    <h3 className="Titulos">Compromisos <Button id="ShowFormCompromisos" name="Compromisos" className="rounded-pill bg-white text-dark fw-bold border-white" onClick={e=>updateAndChange(e.target.name)}>+</Button></h3>
                     
                     </Col>
 
                     <Col lg={12}className="tamanoListaCompromisos rounded-3 p-3"> 
                     
-                    { ShowFormCompromisos ? <FormAddElementsLeft type="Compromisos"/> : listCompromisos } 
+                    { ShowFormCompromisos ? <FormAddElementsLeft type="Compromisos"/> :<ol>{Compromisos.map((element)=><li className="h5 text-dark fw-bold">{element.Nombre} - <span style={{color:"#126e82"}}>{element.Fecha}</span></li>)}</ol> }
                
                     </Col>
 

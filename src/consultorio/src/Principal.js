@@ -32,7 +32,7 @@ export default function Principal() {
         <Container fluid={true} className="">
             <Row><Barra/></Row>
             
-            <Row className="justify-content-center mt-4 p-2">
+            <Row className="justify-content-center mt-5 p-2">
       
                 <Pizquierdo/>
 

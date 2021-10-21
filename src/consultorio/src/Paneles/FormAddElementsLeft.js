@@ -12,6 +12,9 @@ export default function FormAddElementsLeft(props) {
 
                 const errors={};
                
+
+                if (props.type=="Compromisos") values.IdentificacionEnfermizo="Relleno Prueba";
+
                 if (!values.dato || !values.fecha || !values.hora || !values.IdentificacionEnfermizo) {
             
                     let data={"dato":!values.dato,"fecha":!values.fecha,"hora":!values.hora,"IdentificacionEnfermizo":!values.IdentificacionEnfermizo}

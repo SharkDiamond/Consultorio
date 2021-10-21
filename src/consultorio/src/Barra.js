@@ -10,12 +10,12 @@ import './App.css';
 function Barra(props) {
     
     return(
-<div>
-{ !props.noMostrar ? <Navbar className="barra pt-3 fixed-top border-bottom border-dark border-2"  expand="lg" >
+<div className="mb-3">
+{ !props.noMostrar ? <Navbar className="barra pt-3 fixed-top border-bottom border-dark border-2 "  expand="lg" >
                        
-<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+<Navbar.Toggle aria-controls="responsive-navbar-nav " />
 
-    <Navbar.Collapse id="responsive-navbar-nav" className="">
+    <Navbar.Collapse id="responsive-navbar-nav " className="">
         <Nav className="me-auto" >
         
            <Navbar.Brand href="#link"  onClick={(e) => props.update("Graficas")}><img src={Graficas} width="60px" height="60px"  className="img-fluid " /> <span className="h3 fw-bold" style={{color:'#126e82'}} >Graficas</span></Navbar.Brand> 
