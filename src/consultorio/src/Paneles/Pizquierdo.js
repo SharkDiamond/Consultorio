@@ -127,7 +127,7 @@ export default function Pizquierdo(props) {
 
                     <Col lg={12}className="tamanoListaCompromisos rounded-3 p-3"> 
                     
-                    { ShowFormCompromisos ? <FormAddElementsLeft type="Compromisos"/> :<ol>{Compromisos.map((element)=><li className="h5 text-dark fw-bold">{element.Nombre} - <span style={{color:"#126e82"}}>{element.Fecha}</span></li>)}</ol> }
+                    { ShowFormCompromisos ? <FormAddElementsLeft type="Compromisos"/> :<ol>{Compromisos.map((element)=><li className="h5 text-dark fw-bold">{element.Nombre} - <span style={{color:"#126e82"}}>{element.Hora}</span></li>)}</ol> }
                
                     </Col>
 

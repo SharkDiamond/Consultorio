@@ -16,8 +16,12 @@ const Compromisos=new Schema({
         type:Date,
         require:[true,"La fecha es necesaria"]
 
-    }
+    },
 
+    Hora:{
+        type:String,
+        require:[true,"La hora es necesaria"]
+    }
 });
 
 module.exports=model("Compromiso",Compromisos);

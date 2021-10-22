@@ -12,7 +12,6 @@ export default function FormAddElementsLeft(props) {
 
                 const errors={};
                
-
                 if (props.type=="Compromisos") values.IdentificacionEnfermizo="Relleno Prueba";
 
                 if (!values.dato || !values.fecha || !values.hora || !values.IdentificacionEnfermizo) {
@@ -48,11 +47,12 @@ export default function FormAddElementsLeft(props) {
             
             else if(props.type=="Compromisos") {
                 
-
+                
                 let Peticion=await axios.post("http://localhost:8082/Compromisos/CreateCompromiso",{
                     "UsuarioPerteneciente":sessionStorage.getItem("Usuario"),
                     "Nombre":values.dato,
-                    "Fecha":values.fecha
+                    "Fecha":values.fecha,
+                    "Hora":values.hora
                     },{ headers: {
                             'token': sessionStorage.getItem("Token")
                         }});
