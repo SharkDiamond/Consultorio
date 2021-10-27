@@ -13,7 +13,7 @@ const Compromisos=new Schema({
         require:[true,"El nombre del compromiso es requerido"]
     },
     Fecha:{
-        type:Date,
+        type:String,
         require:[true,"La fecha es necesaria"]
 
     },

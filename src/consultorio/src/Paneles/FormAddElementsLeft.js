@@ -46,23 +46,28 @@ export default function FormAddElementsLeft(props) {
             }
             
             else if(props.type=="Compromisos") {
-                
-                
+    
+                const convirtiendoFecha=new Date(values.fecha);
+                //Creando un arreglo segun la coma
+                const DiaHoy= convirtiendoFecha.toLocaleString().split(",");   
+                //CREANDO UN ARREGLO A PARTIR DEL SIMBOLO /
+                let Separate=DiaHoy[0].split("/");
+                //SUMANDOLE 1 DIA AL DIA DE LA FECHA
+                let sumaryDay=parseInt(Separate[1])+1;
+                //CREANDO UNA VARIABLE STRING CON EL NUEVO DIA CONVERTIDO
+                let newDate=`${Separate[0]}/${sumaryDay}/${Separate[2]}`
+                //HACIENDO LA PETICION
                 let Peticion=await axios.post("http://localhost:8082/Compromisos/CreateCompromiso",{
                     "UsuarioPerteneciente":sessionStorage.getItem("Usuario"),
                     "Nombre":values.dato,
-                    "Fecha":values.fecha,
+                    "Fecha":newDate,
                     "Hora":values.hora
                     },{ headers: {
                             'token': sessionStorage.getItem("Token")
                         }});
 
-           
-      toast.success(Peticion.data);
-
-
-
-
+                //ENVIANDO EL MENSAJE
+                toast.success(Peticion.data);
             }
 
 

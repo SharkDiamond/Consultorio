@@ -1,5 +1,6 @@
 const Compromiso=require("../Data/CompromisosDb");
 
+
 //CREATE COMPROMISO
 const compromisoCreate=async(req,res)=>{
 
@@ -44,15 +45,14 @@ const compromisoGet=async(req,res)=>{
         
         
         let DiaHoy=new Date();
-        
 
-      const data=await Compromiso.find({UsuarioPerteneciente:req.body.user});
-      console.log("Dia de hoy",DiaHoy.toLocaleDateString());
-        let fechacompleta=data[6].Fecha.toLocaleDateString().split("/");
-      let dia= data[6].Fecha.toLocaleDateString().split("/")[1];
-     let k= parseInt(dia)+1;
-        console.log("Base de datos",fechacompleta[0]+"/"+k+"/"+fechacompleta[2]);
-      
+      //PIDIENDO A LA BASE DE DATOS LOS COMPROMISOS DEL USUARIO
+      const data=await Compromiso.find({UsuarioPerteneciente:req.body.user,
+        Fecha:DiaHoy.toLocaleDateString()
+      });
+
+      //IMPRIMIENDO LA FECHA DEL DIA DE HOY
+     console.log(data);
         
       res.status(200).json(data).end();
 

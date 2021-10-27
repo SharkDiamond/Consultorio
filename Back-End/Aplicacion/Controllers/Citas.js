@@ -102,12 +102,34 @@ const GetCitas=async (req,res)=>{
 
         ]);
 
-        console.log(dataGeneral);
+   
+        
+        let dati=new Date();
+
+        //Creando un arreglo segun la coma
+        const DiaHoy= dati.toLocaleString().split(",");   
+
+        console.log("Dia de hoy",DiaHoy[0]);
+
         //RECORRIENDO Y ORDENANDO DICHA INFORMACION COLOCANDO SOLO LO MAS IMPORTANTE
         const data=dataGeneral.map((element,index)=>{
-       
-            return {"Paciente":element["PacienteData"].Nombre+" "+element["PacienteData"].Apellido,"Sintomas":element.Sintoma,"Fecha":element.Fecha}
 
+            //Creando un arreglo segun la coma
+            let DiaHoyD= element.Fecha.toLocaleString().split(",");   
+            //CREANDO UN ARREGLO A PARTIR DEL SIMBOLO /
+            
+            
+            let Separate=DiaHoyD[0].split("/");
+           
+            let sumaryDay=parseInt(Separate[1])+1;
+
+           
+            let newDate=`${Separate[0]}/${sumaryDay}/${Separate[2]}`;
+            console.log(newDate);
+            //hay que usar un filter fuera con todo el algoritmo de arriba
+    return {"Paciente":element["PacienteData"].Nombre+" "+element["PacienteData"].Apellido,"Sintomas":element.Sintoma,"Fecha":element.Fecha}
+
+  
 });
 
         
